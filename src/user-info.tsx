@@ -7,12 +7,18 @@ import twitter from '../public/twitter new.png'
 import linkedin from '../public/linkedin-mono.png'
 import mainStyles from './main.module.scss'
 import UserSections from './user-sections'
+import { useMediaQuery } from 'react-responsive'
 
 
 export default function UserInfo() {
 
-    const interests: string[] = ["Software delelopment", "IT", "Software delelopment", "Interest 3", "Name Of Interest", "Software delelopment", "IT",
-        "Interest 3", "Interest 3", "Software delelopment", "Interest 3", "Name Of Interest", "Name Of Interest", "Interest 3"]
+
+    const isMobile = useMediaQuery({ query: '(max-width: 767px)' })
+
+
+    const interests: string[] = !isMobile ? ["Software delelopment", "IT", "Software delelopment", "Interest 3", "Name Of Interest", "Software delelopment", "IT",
+        "Interest 3", "Interest 3", "Software delelopment", "Interest 3", "Name Of Interest", "Name Of Interest", "Interest 3"] :
+        ["Software delelopment", "IT", "Software delelopment", "Interest 3", "IT", "Interest 3", "Name Of Interest"]
 
     return (
         <section className={mainStyles.main__info}>
@@ -103,7 +109,7 @@ export default function UserInfo() {
             </div>
 
             <div style={{ flex: 1 }} className={mainStyles['main__info-right-wrapper']}>
-                <div className={mainStyles.info__item + ' ' + mainStyles.info__item_right} style={{ minWidth: '400px' }}>
+                <div className={mainStyles.info__item + ' ' + mainStyles.info__item_right} style={!isMobile ? { minWidth: '400px' } : {}}>
                     <h2 className={mainStyles.info__heading}>
                         Contacts
                         <div className={mainStyles['main-button']}>Request all contacts</div>
@@ -172,7 +178,7 @@ export default function UserInfo() {
                 </div>
 
                 <UserSections />
-                
+
             </div>
 
 

@@ -1,147 +1,190 @@
 import styles from './main.module.scss'
-import location from '../public/map-pin-line.png'
-import heartUnfill from '../public/heart-unfill.png'
 import { useState } from 'react'
-import { useCollapse } from 'react-collapsed'
 import emptyFrame from '../public/empty-frame.png'
+import CardMobile from './CardMobile'
+import { useMediaQuery } from 'react-responsive'
+import CardDesktop from './CardDesktop'
+import Dialog from '@mui/material/Dialog';
+import popupStyles from './popup.module.scss'
+import popupTop from '../public/Graphic Element.png'
+import cross from '../public/cross.png'
+import ServicePopup from './ServicesPopup'
+import SortPopup from './SortPopup'
+import { PopupTransition } from './Needs'
 
 export default function Offers() {
+    const isMobile = useMediaQuery({ query: '(max-width: 767px)' })
 
-    const [isExpanded, setExpanded] = useState<boolean>(false)
-    const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded, collapsedHeight: 720 })
+    const [open, setOpen] = useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     return (
-        <div className={styles.info__needs} {...getCollapseProps()}>
-        <h2 className={styles.info__heading}>
-            Offers
-        </h2>
-        <div className={styles.card_offers}>
-            <div className={styles.card__date}>2024.08.14</div>
-            <div className={styles.card__top}>
-                <div className={styles['card__name-left']}>
-                    <div className={styles.card__heading}>Startup localization and adaptation</div>
-                    <div className={styles['main-button']}>
-                        Serivce
+        <div className={styles.info__needs}>
+            <h2 className={styles.info__heading}>
+                Offers
+            </h2>
+
+            {!isMobile ? <CardDesktop type='offers' heading='Startup localization and adaptation' /> : <CardMobile type='offers' />}
+
+            <div className={styles['info__product-cards']}>
+
+                <div className={styles['product-card']}>
+                    <div className={styles['product-card__top']}>
+                        <span>New</span>
+                        <div className={styles.card__heart} />
+                    </div>
+
+                    <div className={styles.card__heading}>
+                        Product 1
+                    </div>
+
+                    <div>
+                        <span className={styles['info__regular-text']}>30-70 USD</span>
+                        <span className={styles['product-card__grey-text']}> per item</span>
+                    </div>
+
+                    <img src={emptyFrame} alt="product-image" className={styles['product-card__picture']} />
+
+                    <div className={styles['info__regular-text']}>
+                        Lorem ipsum dolor sit amet, consectetur laboris nisi ut aliquip...
+                    </div>
+
+                    <div className={styles['main-button'] + ' ' + styles['card__view-more']}>
+                        View more
                     </div>
                 </div>
 
-                <img src={heartUnfill} alt="heart" />
+                <div className={styles['product-card']}>
+                    <div className={styles['product-card__top']} style={{ justifyContent: 'end' }}>
+                        <div className={styles.card__heart} />
+                    </div>
+
+                    <div className={styles.card__heading}>
+                        Product 2
+                    </div>
+
+                    <div>
+                        <span className={styles['info__regular-text']}>30-70 USD</span>
+                        <span className={styles['product-card__grey-text']}> per item</span>
+                    </div>
+
+                    <img src={emptyFrame} alt="product-image" className={styles['product-card__picture']} />
+
+                    <div className={styles['info__regular-text']}>
+                        Lorem ipsum dolor sit amet, consectetur laboris nisi ut aliquip...
+                    </div>
+
+                    <div className={styles['main-button'] + ' ' + styles['card__view-more']}>
+                        View more
+                    </div>
+                </div>
+
+                <div className={styles['product-card']}>
+                    <div className={styles['product-card__top']} style={{ justifyContent: 'end' }}>
+                        <div className={styles.card__heart} />
+                    </div>
+
+                    <div className={styles.card__heading}>
+                        Product 3
+                    </div>
+
+                    <div>
+                        <span className={styles['info__regular-text']}>30-70 USD</span>
+                        <span className={styles['product-card__grey-text']}> per item</span>
+                    </div>
+
+                    <img src={emptyFrame} alt="product-image" className={styles['product-card__picture']} />
+
+                    <div className={styles['info__regular-text']}>
+                        Lorem ipsum dolor sit amet, consectetur laboris nisi ut aliquip...
+                    </div>
+
+                    <div className={styles['main-button'] + ' ' + styles['card__view-more']}>
+                        View more
+                    </div>
+                </div>
             </div>
 
-            <div className={styles.card__info}>
-                <span className={styles['card__info-location']}>
-                    <img src={location} />
-                    <span>Tokyo, Japan</span>
-                </span>
-
-                <span>
-                    Budget: $1000-5000
-                </span>
-
-                <span>
-                    Terms: 1-3 months
-                </span>
+            <div className={styles['more-button']} onClick={handleClickOpen}>
+                All offers
             </div>
 
-            <div className={styles['info__regular-text']}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor exercitation ullamco laboris nisi ut aliquip...
-            </div>
+            <Dialog
+                open={open}
+                TransitionComponent={PopupTransition}
+                keepMounted
+                disableScrollLock
+                onClose={handleClose}
+                aria-describedby="alert-dialog-slide-description"
+                sx={!isMobile ? {
+                    backdropFilter: "blur(5px) sepia(5%)",
+                    "& .MuiDialog-paper": {
+                        borderRadius: "14px",
+                        maxWidth: 'none',
+                        maxHeight: 'none',
+                        margin: 0
+                    },
+                } : {
+                    "& .MuiDialog-paper": {
+                        maxWidth: 'none',
+                        maxHeight: 'none',
+                        margin: 0
+                    },
+                    "& .MuiDialog-container": {
+                        alignItems: 'stretch'
+                    }
+                }}
+            >
+                <div className={popupStyles.popup}>
+                    <div className={popupStyles.popup__top}>
+                        <ServicePopup />
+                        <SortPopup />
+                    </div>
 
-            <div className={styles.card__buttons}>
-                <div className={styles['main-button']}>User Interface Design</div>
-                <div className={styles['main-button']}>User Experience Design</div>
-            </div>
 
-            <div className={styles['main-button'] + ' ' + styles['card__view-more']}>
-                View more
-            </div>
+                    {!isMobile ? <CardDesktop type='offers' heading='UX/UI design for ecommerce' /> : <CardMobile type='offers' />}
+
+                    <div className={styles['info__product-cards']}>
+
+                        <div className={styles['product-card']}>
+                            <div className={styles['product-card__top']}>
+                                <span>New</span>
+                                <div className={styles.card__heart} />
+                            </div>
+
+                            <div className={styles.card__heading}>
+                                Product 1
+                            </div>
+
+                            <div>
+                                <span className={styles['info__regular-text']}>30-70 USD</span>
+                                <span className={styles['product-card__grey-text']}> per item</span>
+                            </div>
+
+                            <img src={emptyFrame} alt="product-image" className={styles['product-card__picture']} />
+
+                            <div className={styles['info__regular-text']}>
+                                Lorem ipsum dolor sit amet, consectetur laboris nisi ut aliquip...
+                            </div>
+
+                            <div className={styles['main-button'] + ' ' + styles['card__view-more']}>
+                                View more
+                            </div>
+                        </div>
+                    </div>
+
+                    <img src={cross} className={popupStyles.popup__cross} onClick={handleClose} />
+                    <img src={popupTop} className={popupStyles['popup__bg-left']} />
+                    <img src={popupTop} className={popupStyles['popup__bg-right']} />
+                </div>
+            </Dialog>
         </div>
-
-        <div className={styles['info__product-cards']}>
-
-
-            <div className={styles['product-card']}>
-                <div className={styles['product-card__top']}>
-                    <span>New</span>
-                    <img src={heartUnfill} />
-                </div>
-
-                <div className={styles.card__heading}>
-                    Product 1
-                </div>
-
-                <div>
-                    <span className={styles['info__regular-text']}>30-70 USD</span>
-                    <span className={styles['product-card__grey-text']}> per item</span>
-                </div>
-
-                <img src={emptyFrame} alt="product-image" className={styles['product-card__picture']} />
-
-                <div className={styles['info__regular-text']}>
-                    Lorem ipsum dolor sit amet, consectetur laboris nisi ut aliquip...
-                </div>
-
-                <div className={styles['main-button'] + ' ' + styles['card__view-more']}>
-                    View more
-                </div>
-            </div>
-
-            <div className={styles['product-card']}>
-                <div className={styles['product-card__top']} style={{ justifyContent: 'end' }}>
-                    <img src={heartUnfill} />
-                </div>
-
-                <div className={styles.card__heading}>
-                    Product 2
-                </div>
-
-                <div>
-                    <span className={styles['info__regular-text']}>30-70 USD</span>
-                    <span className={styles['product-card__grey-text']}> per item</span>
-                </div>
-
-                <img src={emptyFrame} alt="product-image" className={styles['product-card__picture']} />
-
-                <div className={styles['info__regular-text']}>
-                    Lorem ipsum dolor sit amet, consectetur laboris nisi ut aliquip...
-                </div>
-
-                <div className={styles['main-button'] + ' ' + styles['card__view-more']}>
-                    View more
-                </div>
-            </div>
-
-            <div className={styles['product-card']}>
-                <div className={styles['product-card__top']} style={{ justifyContent: 'end' }}>
-                    <img src={heartUnfill} />
-                </div>
-
-                <div className={styles.card__heading}>
-                    Product 3
-                </div>
-
-                <div>
-                    <span className={styles['info__regular-text']}>30-70 USD</span>
-                    <span className={styles['product-card__grey-text']}> per item</span>
-                </div>
-
-                <img src={emptyFrame} alt="product-image" className={styles['product-card__picture']} />
-
-                <div className={styles['info__regular-text']}>
-                    Lorem ipsum dolor sit amet, consectetur laboris nisi ut aliquip...
-                </div>
-
-                <div className={styles['main-button'] + ' ' + styles['card__view-more']}>
-                    View more
-                </div>
-            </div>
-        </div>
-
-        <div className={styles['more-button']} {...getToggleProps({
-          onClick: () => setExpanded((prevExpanded) => !prevExpanded),
-        })}>
-            All offers
-        </div>
-    </div>
     );
 }

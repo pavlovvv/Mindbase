@@ -29,6 +29,10 @@
     font-size: 16px;
     font-weight: 700;
     margin-left: 16px;
+
+    @media (max-width: '767px') {
+        margin-left: 0;
+    }
 }
 
 .popover__menu-item {
@@ -45,13 +49,16 @@
     align-items: center;
     column-gap: 7px;
     cursor: pointer;
+    transition: color 0.2s;
 
     img {
+        transition: color 0.2s;
         width: 18px;
         height: 18px;
     }
 
-    &:nth-child(3) {
+
+    &:hover {
         color: #8B8A8A;
     }
 
@@ -61,8 +68,11 @@
 }
 
 .popover__menu-item_heading {
+    @extend .popover__menu-item;
+
     font-weight: 700;
     padding-left: 22px;
+    pointer-events: none;
 }
 
 .popover__menu-item_org {
@@ -75,5 +85,86 @@
     img {
         width: 28px;
         height: 28px;
+    }
+}
+
+.popover__wrapper_mobile {
+    padding: 44px 14px;
+    width: 100%;
+
+    .popover__menu-section:not(:last-child) {
+        padding-bottom: 18px;
+        border-bottom: 1px solid #BAD2F9;
+    }
+
+    .popover__menu-section:not(:first-child) {
+        margin-top: 18px;
+    }
+
+    .popover__menu-item {
+        padding: 0 84px;
+        position: relative;
+
+        @media (max-width: 375px) {
+            padding: 0 45px;
+        }
+    }
+}
+
+.popover__menu-item_dot {
+    @extend .popover__menu-item;
+    @extend .popover__menu-item_heading;
+
+    display: list-item;
+    padding: 0 !important;
+    margin-left: 84px;
+
+    @media (max-width: 375px) {
+        margin-left: 45px;
+    }
+}
+
+.popover__menu-top-item {
+    @extend .popover__menu-item_heading;
+    padding: 0 !important;
+}
+
+.popover__menu-top-item_grey {
+    @extend .popover__menu-top-item;
+    color: #8B8A8A;
+}
+
+.popover__cross {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 15px;
+    right: 31px;
+    cursor: pointer;
+}
+
+.popover_discover {
+    border: none;
+
+    &>div {
+        box-shadow: 0px 0px 4px 0px #25436D4D;
+        border-radius: 0px, 14px, 14px, 14px;
+    }
+}
+
+.popover_discover__wrapper {
+    padding: 20px 22px;
+    width: 285px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+
+    & > div {
+        cursor: pointer;
+    }
+
+    & > div:not(:last-child) {
+        margin-bottom: 12px;
     }
 }

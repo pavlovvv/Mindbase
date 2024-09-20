@@ -1,0 +1,141 @@
+.popup {
+    padding: 90px 112px 0 112px;
+    background: #E3EDFD;
+    border-radius: 14px;
+    max-width: 882px;
+    max-height: 580px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+
+    &>div:not(:first-child) {
+        margin-top: 24px;
+    }
+
+
+    &::-webkit-scrollbar-track {
+        border-radius: 14px;
+        background: none;
+    }
+
+    &::-webkit-scrollbar {
+        width: 16px;
+        background: none;
+        border: 1px solid #8AADD8;
+        border-radius: 14px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 14px;
+        background: none;
+        background-color: #D2DADF;
+        border: 1px solid #8AADD8;
+    }
+
+    @media (max-width: 767px) {
+        padding: 126px 36px 0 32px;
+        border-radius: 0;
+        height: 100%;
+        min-height: 100vh;
+
+        &::-webkit-scrollbar {
+            width: 10px;
+            border-radius: 20px 200px 200px 20px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 20px;
+        }
+    }
+
+    @media (min-width: 1980px) {
+        max-width: 1100px;
+        max-height: 650px;
+    }
+}
+
+.popup__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.popup__top-services {
+    width: 129px;
+
+    svg {
+        color: #25436D;
+    }
+}
+
+.popup__top-sort {
+    width: 200px;
+}
+
+.popup__label {
+    color: #25436D !important;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    padding-right: 32px !important;
+}
+
+.popup__bg-left {
+    position: absolute;
+    left: -102px;
+    top: -64px;
+}
+
+.popup__bg-right {
+    float: right;
+    margin-right: -200px;
+    transform: rotate(180deg);
+}
+
+.popup__cross {
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+
+    @media (max-width: 767px) {
+        top: 24px;
+        right: 24px;
+    }
+}
+
+.portfolio-popup__heading {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: -0.011em;
+    text-align: left;
+    margin-bottom: 12px;
+    color: #25436D;
+}
+
+.portfolio-popup__clarification {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: -0.011em;
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.portfolio-popup__skills {
+    @extend .portfolio-popup__clarification;
+    color: #8B8A8A;
+}
+
+.portfolio-popup__text {
+    font-size: 16px;
+    line-height: 24px;
+    color: #1E1E1E;
+    margin-bottom: 24px;
+}
