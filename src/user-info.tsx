@@ -8,6 +8,7 @@ import linkedin from '../public/linkedin-mono.png'
 import mainStyles from './main.module.scss'
 import UserSections from './user-sections'
 import { useMediaQuery } from 'react-responsive'
+import { Link } from "react-router-dom";
 
 
 export default function UserInfo() {
@@ -20,31 +21,41 @@ export default function UserInfo() {
         "Interest 3", "Interest 3", "Software delelopment", "Interest 3", "Name Of Interest", "Name Of Interest", "Interest 3"] :
         ["Software delelopment", "IT", "Software delelopment", "Interest 3", "IT", "Interest 3", "Name Of Interest"]
 
+    const handleEmailClick = () => {
+        const email = "john.doe@gmail.com";
+        window.location.href = `mailto:${email}`;
+    };
+
+    const handleNumberClick = () => {
+        const phoneNumber = "+1234567890";
+        window.location.href = `tel:${phoneNumber}`;
+    };
+
     return (
         <section className={mainStyles.main__info}>
 
             <div className={mainStyles['main__info-left-wrapper']}>
 
                 <div className={mainStyles.info__item}>
-                    <h2 className={mainStyles.info__heading}>
+                    <h2 className={mainStyles.info__heading} >
                         Associated with
                     </h2>
 
-                    <div className={mainStyles['info__main-object']}>
+                    <Link to={`organisations/innovation-hills`} className={mainStyles['info__main-object'] + ' ' + mainStyles['info__main-object_hover']}>
                         <img src={orgLogoSample} alt="organization-logo" className={mainStyles.info__logo} />
                         <div>
                             <div className={mainStyles['info__regular-text']}>Innovation Hills</div>
                             <div className={mainStyles['info__regular-text'] + ' ' + mainStyles['info__regular-text_grey']}>Senior Developer</div>
                         </div>
-                    </div>
+                    </Link>
 
-                    <div className={mainStyles['info__main-object']}>
+                    <Link to={`organisations/Shibaura-Institute-of-Technology`} className={mainStyles['info__main-object'] + ' ' + mainStyles['info__main-object_hover']}>
                         <img src={shibauraLogo} alt="organization-logo" className={mainStyles.info__logo} />
                         <div>
                             <div className={mainStyles['info__regular-text']}>Shibaura Institute of Technology</div>
                             <div className={mainStyles['info__regular-text'] + ' ' + mainStyles['info__regular-text_grey']}>Professor</div>
                         </div>
-                    </div>
+                    </Link>
                 </div>
 
                 <div className={mainStyles.info__item}>
@@ -121,12 +132,12 @@ export default function UserInfo() {
                             <div>
                                 <div className={mainStyles['info__main-object-inner']}>
                                     <div className={mainStyles['info__small-text']}>personal</div>
-                                    <div className={mainStyles['info__regular-text'] + ' ' + mainStyles['info__regular-text_underline']}>+81 XXX XXX XX 21</div>
+                                    <div className={mainStyles['info__regular-text'] + ' ' + mainStyles['info__regular-text_underline']} onClick={handleNumberClick}>+81 XXX XXX XX 21</div>
                                 </div>
 
                                 <div className={mainStyles['info__main-object-inner']}>
                                     <div className={mainStyles['info__small-text']}>Innovation Hills</div>
-                                    <div className={mainStyles['info__regular-text'] + ' ' + mainStyles['info__regular-text_underline']}>+81 XXX XXX XX 35</div>
+                                    <div className={mainStyles['info__regular-text'] + ' ' + mainStyles['info__regular-text_underline']} onClick={handleNumberClick}>+81 XXX XXX XX 35</div>
                                 </div>
                             </div>
                         </div>
@@ -134,15 +145,15 @@ export default function UserInfo() {
                         <div className={mainStyles['info__main-object'] + ' ' + mainStyles['info__main-object_social-media']}>
                             <div className={mainStyles['info__main-object-inner'] + ' ' + mainStyles['info__main-object-inner_socail-media']}>
                                 <img src={inst} className={mainStyles['info__contacts-img']} />
-                                <div className={mainStyles['info__regular-text'] + ' ' + mainStyles['info__regular-text_underline']}>@john_doe</div>
+                                <a href='https://instagram.com/john_doe/' target='_blank' className={mainStyles['info__regular-text'] + ' ' + mainStyles['info__regular-text_underline']} >@john_doe</a>
                             </div>
                             <div className={mainStyles['info__main-object-inner'] + ' ' + mainStyles['info__main-object-inner_socail-media']}>
                                 <img src={twitter} className={mainStyles['info__contacts-img']} />
-                                <div className={mainStyles['info__regular-text'] + ' ' + mainStyles['info__regular-text_underline']}>@john_doe</div>
+                                <a href='https://x.com/john_doe/' target='_blank' className={mainStyles['info__regular-text'] + ' ' + mainStyles['info__regular-text_underline']}>@john_doe</a>
                             </div>
                             <div className={mainStyles['info__main-object-inner'] + ' ' + mainStyles['info__main-object-inner_socail-media']}>
                                 <img src={linkedin} className={mainStyles['info__contacts-img']} />
-                                <div className={mainStyles['info__regular-text'] + ' ' + mainStyles['info__regular-text_underline']}>John Doe</div>
+                                <a href='https://linkedin.com/john_doe/' target='_blank' className={mainStyles['info__regular-text'] + ' ' + mainStyles['info__regular-text_underline']}>John Doe</a>
                             </div>
                         </div>
 
@@ -151,12 +162,12 @@ export default function UserInfo() {
                             <div>
                                 <div className={mainStyles['info__main-object-inner']}>
                                     <div className={mainStyles['info__small-text']}>personal</div>
-                                    <div className={mainStyles['info__regular-text'] + ' ' + mainStyles['info__regular-text_underline']}>john.doe@gmail.com</div>
+                                    <div className={mainStyles['info__regular-text'] + ' ' + mainStyles['info__regular-text_underline']} onClick={handleEmailClick}>john.doe@gmail.com</div>
                                 </div>
 
                                 <div className={mainStyles['info__main-object-inner']}>
                                     <div className={mainStyles['info__small-text']}>Innovation Hills</div>
-                                    <div className={mainStyles['info__regular-text'] + ' ' + mainStyles['info__regular-text_underline']}>john.doe@innovationhills.com</div>
+                                    <div className={mainStyles['info__regular-text'] + ' ' + mainStyles['info__regular-text_underline']} onClick={handleEmailClick}>john.doe@innovationhills.com</div>
                                 </div>
                             </div>
                         </div>

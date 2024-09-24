@@ -5,10 +5,11 @@ import { useMediaQuery } from 'react-responsive'
 import Dialog from '@mui/material/Dialog';
 import popupStyles from './popup.module.scss'
 import popupTop from '../public/Graphic Element.png'
-import cross from '../public/cross.png'
+import arrowLeft from '../public/arrow-left.png'
 import SortPopup from './SortPopup'
 import { PopupTransition } from './Needs'
 import emptyFrame from '../public/empty-frame.png'
+import { Link } from 'react-router-dom';
 
 export default function Projects() {
     const isMobile = useMediaQuery({ query: '(max-width: 767px)' })
@@ -31,20 +32,20 @@ export default function Projects() {
             <div className={styles.card_projects}>
                 <div className={styles.card__top}>
                     <div className={styles.card__date}>2024.08.14</div>
-                    {isMobile && <div className={styles['info__projects-name']}>
+                    {isMobile && <Link to="organizations/innovation-hills" className={styles['info__projects-name'] + ' ' + styles['info__main-object_hover']}>
                         & Innovation Hills
                         <div className={styles.card__heart} />
-                    </div>}
+                    </Link>}
                 </div>
                 <div className={styles.card__top}>
                     <div className={styles['card__name-left']}>
                         <div className={styles.card__heading}>Mindbase platform</div>
 
                     </div>
-                    {!isMobile && <div className={styles['info__projects-name']}>
+                    {!isMobile && <Link to="organizations/innovation-hills" className={styles['info__projects-name'] + ' ' + styles['info__main-object_hover']}>
                         & Innovation Hills
                         <div className={styles.card__heart} />
-                    </div>}
+                    </Link>}
 
                 </div>
 
@@ -75,10 +76,10 @@ export default function Projects() {
                         <div className={styles.card__heading}>Mindbase platform</div>
 
                     </div>
-                    <div className={styles['info__projects-name']}>
+                    <Link to="organizations/innovation-hills" className={styles['info__projects-name'] + ' ' + styles['info__main-object_hover']}>
                         & Innovation Hills
                         <div className={styles.card__heart} />
-                    </div>
+                    </Link>
 
                 </div>
 
@@ -149,10 +150,10 @@ export default function Projects() {
                                         <div className={styles.card__heading}>Mindbase platform</div>
                                     </div>
 
-                                    <div className={styles['info__projects-name']}>
+                                    <Link to="organizations/innovation-hills" className={styles['info__projects-name'] + ' ' + styles['info__main-object_hover']}>
                                         & Innovation Hills
                                         <div className={styles.card__heart} />
-                                    </div>
+                                    </Link>
                                 </div>
 
                                 <div className={styles.card__info}>
@@ -180,10 +181,10 @@ export default function Projects() {
                         <div className={styles.card_projects}>
                             <div className={styles.card__top}>
                                 <div className={styles.card__date}>2024.08.14</div>
-                                <div className={styles['info__projects-name']}>
+                                <Link to="organizations/innovation-hills" className={styles['info__projects-name'] + ' ' + styles['info__main-object_hover']}>
                                     & Innovation Hills
                                     <div className={styles.card__heart} />
-                                </div>
+                                </Link>
                             </div>
                             <div className={styles.card__top}>
                                 <div className={styles['card__name-left']}>
@@ -220,20 +221,20 @@ export default function Projects() {
                     <div className={styles.card_projects}>
                         <div className={styles.card__top}>
                             <div className={styles.card__date}>2024.08.14</div>
-                            {isMobile && <div className={styles['info__projects-name']}>
+                            {isMobile && <Link to="organizations/innovation-hills" className={styles['info__projects-name'] + ' ' + styles['info__main-object_hover']}>
                                 & Innovation Hills
                                 <div className={styles.card__heart} />
-                            </div>}
+                            </Link>}
                         </div>
                         <div className={styles.card__top}>
                             <div className={styles['card__name-left']}>
                                 <div className={styles.card__heading}>Mindbase platform</div>
 
                             </div>
-                            {!isMobile && <div className={styles['info__projects-name']}>
+                            {!isMobile && <Link to="organizations/innovation-hills" className={styles['info__projects-name'] + ' ' + styles['info__main-object_hover']}>
                                 & Innovation Hills
                                 <div className={styles.card__heart} />
-                            </div>}
+                            </Link>}
 
                         </div>
 
@@ -257,7 +258,7 @@ export default function Projects() {
                         </div>
                     </div>
 
-                    <img src={cross} className={popupStyles.popup__cross} onClick={handleClose} />
+                    <div className={popupStyles.popup__back} onClick={handleClose}><img src={arrowLeft} alt="arrow-left" /> Back</div>
                     <img src={popupTop} className={popupStyles['popup__bg-left']} />
                     <img src={popupTop} className={popupStyles['popup__bg-right']} />
                 </div>

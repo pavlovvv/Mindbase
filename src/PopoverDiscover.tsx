@@ -24,8 +24,6 @@ export default function PopoverDiscover() {
                 open={open}
                 anchorEl={anchorEl}
                 onClose={handleClose}
-                // disableAutoFocus={true}
-                // disableEnforceFocus={true}
                 anchorOrigin={{
                     vertical: 'bottom',
                     horizontal: 'left',
@@ -34,7 +32,7 @@ export default function PopoverDiscover() {
                     vertical: 'top',
                     horizontal: 'left',
                 }}
-                // sx={{ pointerEvents: 'none' }}
+                sx={{ zIndex: 1500 }}
                 className={popoverStyles.popover_discover}
             >
                 <div className={popoverStyles.popover_discover__wrapper}>

@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive'
 import Dialog from '@mui/material/Dialog';
 import popupStyles from './popup.module.scss'
 import popupTop from '../public/Graphic Element.png'
-import cross from '../public/cross.png'
+import arrowLeft from '../public/arrow-left.png'
 import { PopupTransition } from './Needs'
 import emptyFrame from '../public/empty-frame.png'
 import portfolioFrame1 from '../public/portfolio-frame-1.png'
@@ -40,7 +40,7 @@ export default function Portfolio() {
                 Portfolio
             </h2>
             <div className={styles['info__portfolio-projects']}>
-                <div className={styles['porfolio-project']} onClick={handleClickElOpen}>
+                <div className={styles['porfolio-project']} style={{zIndex: 1}} onClick={handleClickElOpen}>
                     <img src={portfolioFrame1} alt="frame 1" />
                     <div className={styles['porfolio-project__name']}>Web design for aroma shop Clarice</div>
                     <div className={styles['porfolio-project__instruments']}>Adobe Photoshop, Adobe I...</div>
@@ -128,7 +128,7 @@ export default function Portfolio() {
                         </div>
                     </div>
 
-                    <img src={cross} className={popupStyles.popup__cross} onClick={handleClose} />
+                    <div className={popupStyles.popup__back} onClick={handleClose}><img src={arrowLeft} alt="arrow-left"/> Back</div>
                     <img src={popupTop} className={popupStyles['popup__bg-left']} />
                     <img src={popupTop} className={popupStyles['popup__bg-right']} />
                 </div>
@@ -161,7 +161,7 @@ export default function Portfolio() {
                     }
                 }}
             >
-                <div className={popupStyles.popup} style={{ background: "#F8F7F6" }}>
+                <div className={popupStyles.popup} style={{ background: "#F8F7F6", maxWidth: '882px' }}>
                     <div className={popupStyles['portfolio-popup__heading']}>Website design for aroma shop Clarice</div>
                     <div className={popupStyles['portfolio-popup__clarification']}>Web & Mobile Design</div>
                     <div className={popupStyles['portfolio-popup__skills']}>Adobe Photoshop, Adobe Illustrator, Prototyping, Figma, Design & Usability Research, Layout Design, Page Layout Design, Website Prototyping, Mockup</div>
@@ -169,7 +169,7 @@ export default function Portfolio() {
                         Visitors perceive the vertical menu faster. Due to the small spacing between elements, users scan two or three buttons in one visual stop. The vertical menu takes up the left column of the page, so you have less space for your content. The upper vertical navigation elements are clearly visible to the users, but the lower ones remain subtle.
                         And as for the horizontal menu, the buttons are located from left to right, so a person is more accustomed to reading them, rather than scanning patterns. The user perceives one button at one visual stop. All elements of the horizontal menu are clearly visible. Vertical navigation leaves more space on the page. This means you can offer the users more content without having to scroll.</div>
                     <div><img src={portfoilioImage} alt="portolio-image" style={{ width: '100%' }} /></div>
-                    <img src={cross} className={popupStyles.popup__cross} onClick={handleElClose} />
+                    <div className={popupStyles.popup__back} onClick={handleElClose}><img src={arrowLeft} alt="arrow-left"/> Back</div>
                     <img src={popupTop} className={popupStyles['popup__bg-left']} />
                     <img src={popupTop} className={popupStyles['popup__bg-right']} />
                 </div>

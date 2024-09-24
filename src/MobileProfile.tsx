@@ -40,7 +40,7 @@ export default function MobileProfile() {
         </div>
         <a style={{ color: '#677ccb', textDecoration: 'underline', cursor: 'pointer' }}         {...getToggleProps({
           onClick: () => setExpanded((prevExpanded) => !prevExpanded),
-        })}>...more</a>
+        })}>{isExpanded ? "...less" : "...more"}</a>
       </div>
 
       <div className={mainStyles['main__left-top-buttons']} style={{ gap: '16px' }}>

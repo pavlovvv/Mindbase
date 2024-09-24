@@ -9,9 +9,19 @@ import { TransitionProps } from '@mui/material/transitions';
 import { forwardRef } from 'react';
 import popupStyles from './popup.module.scss'
 import popupTop from '../public/Graphic Element.png'
-import cross from '../public/cross.png'
 import ServicePopup from './ServicesPopup'
 import SortPopup from './SortPopup'
+import arrowLeft from '../public/arrow-left.png'
+
+export const PopupTransition = forwardRef(function Transition(
+    props: TransitionProps & {
+        children: React.ReactElement<any, any>;
+    },
+    ref: React.Ref<unknown>,
+) {
+    return <Slide direction="up" ref={ref} {...props} />;
+});
+
 
 export default function Needs() {
     const isMobile = useMediaQuery({ query: '(max-width: 767px)' })
@@ -77,7 +87,7 @@ export default function Needs() {
 
                     {!isMobile ? <CardDesktop type='needs' heading='UX/UI design for ecommerce' /> : <CardMobile type='needs' />}
 
-                    <img src={cross} className={popupStyles.popup__cross} onClick={handleClose} />
+                    <div className={popupStyles.popup__back} onClick={handleClose}><img src={arrowLeft} alt="arrow-left" /> Back</div>
                     <img src={popupTop} className={popupStyles['popup__bg-left']} />
                     <img src={popupTop} className={popupStyles['popup__bg-right']} />
                 </div>
@@ -85,12 +95,3 @@ export default function Needs() {
         </div>
     );
 }
-
-export const PopupTransition = forwardRef(function Transition(
-    props: TransitionProps & {
-        children: React.ReactElement<any, any>;
-    },
-    ref: React.Ref<unknown>,
-) {
-    return <Slide direction="up" ref={ref} {...props} />;
-});

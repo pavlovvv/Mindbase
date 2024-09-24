@@ -2,7 +2,7 @@
     padding: 90px 112px 0 112px;
     background: #E3EDFD;
     border-radius: 14px;
-    max-width: 882px;
+    max-width: 1038px;
     max-height: 580px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -49,7 +49,7 @@
     }
 
     @media (min-width: 1980px) {
-        max-width: 1100px;
+        max-width: 1150px;
         max-height: 650px;
     }
 }
@@ -106,6 +106,32 @@
     @media (max-width: 767px) {
         top: 24px;
         right: 24px;
+    }
+}
+
+.popup__back {
+    position: absolute;
+    top: 10px;
+    right: 110px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 24px;
+    color: #3F58BC;
+    border: 1px solid #3F58BC;
+    border-radius: 4px;
+    padding: 2px 10px;
+
+    img {
+        width: 8px;
+        height: 13px;
+    }
+
+    @media (max-width: 767px) {
+        top: 50px;
+        right: 35px;
     }
 }
 

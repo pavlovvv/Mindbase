@@ -1,7 +1,6 @@
 
 import PhotoFull from '../public/photo-full.png'
 import mainStyles from './main.module.scss'
-import shareIcon from '../public/share-icon.png'
 import locationIcon from '../public/map-pin-line.png'
 import { useState } from 'react';
 import { useCollapse } from 'react-collapsed'
@@ -25,7 +24,7 @@ export default function DesktopProfile() {
                     <div className={mainStyles['main__left-top-buttons']}>
                         <div className={mainStyles['main-button']}>Connect</div>
                         <div className={mainStyles['main-button']}>Message</div>
-                        <div className={mainStyles['main__left-top-share']}>Share <img src={shareIcon} /></div>
+                        <div className={mainStyles['main__left-top-share']}>Share <div className={mainStyles['main__left-top-share-icon']} /></div>
                     </div>
                 </div>
                 <div className={mainStyles['main__left-location']}> <img src={locationIcon} /> Tokyo, Japan - 8:01 pm local time </div>
@@ -37,7 +36,7 @@ export default function DesktopProfile() {
                 </div>
                 <a style={{ color: '#677ccb', textDecoration: 'underline', cursor: 'pointer' }}         {...getToggleProps({
                     onClick: () => setExpanded((prevExpanded) => !prevExpanded),
-                })}>...more</a>
+                })}>{isExpanded ? "...less" : "...more"}</a>
             </div>
         </section>
     </>

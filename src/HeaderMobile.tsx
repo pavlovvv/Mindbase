@@ -1,7 +1,6 @@
 import styles from './index.module.scss'
 import popoverStyles from './popover.module.scss'
 import burger from '../public/burger.png'
-import logoHorizontal from '../public/logo horizontal.png'
 import search from '../public/search-2-line.png'
 import { useState } from 'react'
 import Drawer from '@mui/material/Drawer'
@@ -12,8 +11,13 @@ import logoutIcon from '../public/log-out.png'
 import orgLogoSample from '../public/org-logo-sample.png'
 import photoSample from '../public/photo-sample.png';
 import cross from '../public/cross.png'
+import { ReactComponent as HorizontalSvg } from '../public/horizontal-svg.svg';
 
-export default function HeaderMobile() {
+interface HeaderProps {
+    isSticky: boolean
+}
+
+export default function HeaderMobile({ isSticky }: HeaderProps) {
 
     const [open, setOpen] = useState(false);
 
@@ -22,12 +26,12 @@ export default function HeaderMobile() {
     };
 
     return (
-        <header className={styles.header_mobile}>
+        <header className={isSticky ? styles.header_mobile + ' ' + styles.header_sticky : styles.header_mobile}>
             <img src={burger} alt="burger" className={styles.header__burger} onClick={toggleDrawer(true)} />
-            <img src={logoHorizontal} alt="logo" className={styles['header__logo-horizontal']} />
+            <HorizontalSvg />
             <img src={search} alt="search" className={styles.header__search} />
 
-            <Drawer open={open} onClose={toggleDrawer(false)}>
+            <Drawer sx={{ zIndex: 1500 }} open={open} onClose={toggleDrawer(false)}>
                 <div className={styles.drawer}>
                     <div className={popoverStyles.popover__wrapper_mobile}>
                         <div className={popoverStyles.popover__top + ' ' + popoverStyles["popover__menu-section"]}>

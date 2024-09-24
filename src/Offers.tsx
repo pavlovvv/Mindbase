@@ -7,7 +7,7 @@ import CardDesktop from './CardDesktop'
 import Dialog from '@mui/material/Dialog';
 import popupStyles from './popup.module.scss'
 import popupTop from '../public/Graphic Element.png'
-import cross from '../public/cross.png'
+import arrowLeft from '../public/arrow-left.png'
 import ServicePopup from './ServicesPopup'
 import SortPopup from './SortPopup'
 import { PopupTransition } from './Needs'
@@ -180,7 +180,7 @@ export default function Offers() {
                         </div>
                     </div>
 
-                    <img src={cross} className={popupStyles.popup__cross} onClick={handleClose} />
+                    <div className={popupStyles.popup__back} onClick={handleClose}><img src={arrowLeft} alt="arrow-left" /> Back</div>
                     <img src={popupTop} className={popupStyles['popup__bg-left']} />
                     <img src={popupTop} className={popupStyles['popup__bg-right']} />
                 </div>

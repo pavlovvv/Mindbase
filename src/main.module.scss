@@ -10,6 +10,7 @@
     padding: 32px 16px;
     flex-direction: column;
     gap: 24px;
+    margin-top: 32px;
   }
 }
 
@@ -88,7 +89,27 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
+  transition: all 0.2s;
+  display: flex;
+  gap: 11px;
+  align-items: center;
   cursor: pointer;
+
+  &:hover {
+    color: #25436D;
+    text-decoration: underline;
+
+    .main__left-top-share-icon {
+      background: url('../public/share-icon-dark.png');
+    }
+  }
+}
+
+.main__left-top-share-icon {
+  width: 18px;
+  height: 18px;
+  background: url('../public/share-icon.png');
+  transition: all 0.2s;
 }
 
 .main__left-location {
@@ -182,6 +203,15 @@
 
   @media (max-width: 768px) {
     padding-top: 16px;
+  }
+}
+
+.info__main-object_hover {
+  transition: color 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    color: #8B8A8A;
   }
 }
 
@@ -791,6 +821,11 @@
     background-color: #48C74D;
     border-radius: 50%;
     border: 3px solid #DFE8F8;
+
+    @media (max-width: 430px) {
+      width: 5vw;
+      height: 5vw;
+    }
   }
 
   @media (max-width: 424px) {

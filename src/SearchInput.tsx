@@ -9,6 +9,7 @@ export default function CustomizedInputBase() {
     return (
         <Paper
             component="form"
+            className={styles.paper}
             sx={{ display: 'flex', borderRadius: '4px', height: '36px', alignItems: 'center', boxShadow: 'none', border: '1px solid #8aadd8', outline: 'none', width: '330px' }}
         >
             <IconButton sx={{ p: '10px' }} aria-label="menu">
@@ -21,7 +22,7 @@ export default function CustomizedInputBase() {
             />
             <div className={styles["header__input-partners"]}>
                 Partners
-                <img src={arrow} alt="arrow" style={{ width: '7px', height: '4px', marginLeft: '5px'}} />
+                <img src={arrow} alt="arrow" style={{ width: '7px', height: '4px', marginLeft: '5px' }} />
             </div>
         </Paper>
     );

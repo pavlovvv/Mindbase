@@ -160,11 +160,16 @@
     line-height: 24px;
     text-align: left;
 
-    & > div {
+    &>div {
         cursor: pointer;
+        transition: color 0.2s;
+
+        &:hover {
+            color: #8B8A8A;
+        }
     }
 
-    & > div:not(:last-child) {
+    &>div:not(:last-child) {
         margin-bottom: 12px;
     }
 }

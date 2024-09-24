@@ -26,8 +26,8 @@ export default function PopoverMenu() {
     return (<>
         <div onClick={handleClick} className={styles["header__right-menu"]}>
             <img src={photoSample} alt="photo-sample" style={{ width: '54px', borderRadius: '50%' }} />
-            <img src={arrow} alt="arrow" style={!anchorEl ? { width: '13px', height: '8px', transition: 'all 0.4s ease' } : 
-            { width: '13px', height: '8px', transform: 'rotate(180deg)', transition: 'all 0.4s ease' }} />
+            <img src={arrow} alt="arrow" style={!anchorEl ? { width: '13px', height: '8px', transition: 'all 0.4s ease' } :
+                { width: '13px', height: '8px', transform: 'rotate(180deg)', transition: 'all 0.4s ease' }} />
         </div>
         <Popover
             open={open}
