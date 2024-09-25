@@ -35,8 +35,8 @@ export default function Projects({ isEvent }: ProjectProps) {
                 Projects
             </h2>
 
-            {isEvent && !isMobile ? <EventDesktop heading='Event' /> :
-                <EventMobile heading='Event' />
+            {isEvent ? !isMobile ? <EventDesktop heading='Event' /> :
+                <EventMobile heading='Event' /> : <></>
             }
 
             <div className={styles.card_projects}>
