@@ -1,0 +1,220 @@
+.main-organizations {
+    @extend .main;
+    background: none;
+}
+
+.organizations-bg {
+    position: absolute;
+    width: 100%;
+    height: 194px;
+    top: 100px;
+    border-radius: 14px;
+    left: 0;
+    background: url('../public/organizations-bg.png');
+    background-size: cover;
+    background-position: center;
+
+    @media (max-width: 767px) {
+        top: 50px;
+    }
+}
+
+.organizations-bg-rect-1 {
+    position: absolute;
+    background: linear-gradient(90deg, #BAD2F9 0%, rgba(186, 210, 249, 0) 69.4%);
+    width: 100%;
+    top: 100px;
+    left: 0;
+    border-radius: 14px;
+    height: 194px;
+
+    @media (max-width: 767px) {
+        top: 50px;
+    }
+}
+
+.organizations-bg-rect-2 {
+    position: absolute;
+    background: linear-gradient(90deg, #BAD2F9 0%, rgba(186, 210, 249, 0) 69.4%);
+    width: 100%;
+    top: 270px;
+    left: 0;
+    border-radius: 14px;
+    height: 43px;
+    transform: rotate(180deg);
+
+    @media (max-width: 767px) {
+        top: 220px;
+    }
+}
+
+.main__left_org {
+    @extend .main__left;
+    padding-top: 166px;
+}
+
+.main__left-top_org {
+    @extend .main__left-top;
+    padding: 0;
+}
+
+.main__left-text_org {
+    @extend .main__left-text;
+    margin-right: 0;
+}
+
+.info__members {
+    margin: 24px 0;
+}
+
+.info__member {
+    display: flex;
+    width: 309px;
+    gap: 12px;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 25px;
+    align-items: center;
+    cursor: pointer;
+
+    .info__msg {
+        flex: 1 1 auto;
+        text-align: end;
+
+        img {
+            width: 26px;
+            height: 26px;
+            border-radius: 0;
+        }
+    }
+
+    img {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+    }
+
+    @media (max-width: 389px) {
+        width: 100%;
+    }
+}
+
+.info__member_name {
+    font-weight: 700;
+}
+
+.info__item_about {
+    padding: 0 23px 0 63px;
+
+    @media (max-width: 1023px) {
+        padding: 0 17px;
+    }
+}
+
+.thumbnail {
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -24px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #DFE8F859;
+
+        @media (max-width: 1023px) {
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            bottom: unset;
+        }
+    }
+}
+
+.react-player {
+    position: relative;
+    width: fit-content;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+
+    &>div {
+        @media (max-width: 1023px) {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+
+    @media (max-width: 1023px) {
+        width: 100%;
+    }
+}
+
+.main__org-top_mobile {
+    display: flex;
+    gap: 16px;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 62px;
+    height: 62px;
+    background: linear-gradient(162.66deg, rgba(255, 255, 255, 0.6) 0.2%, rgba(248, 247, 246, 0.6) 99.8%);
+    border: 1px solid #fff;
+    box-shadow: 0px 0px 4px 0px #25436D4D;
+    backdrop-filter: blur(4px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-button::before {
+    content: '';
+    border-style: solid;
+    position: absolute;
+    left: 20px;
+    border-width: 14px 0 14px 25px;
+    border-color: transparent transparent transparent #F8F7F6;
+}
+
+.pdf-files {
+    .pdf:not(:first-child) {
+        margin-top: 12px;
+    }
+}
+
+.pdf {
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #1E1E1E;
+    border: 1px solid;
+    border-image-source: linear-gradient(100.05deg, #F8F7F6 0.05%, #FFFFFF 99.95%);
+    box-shadow: 0px 0px 4px 0px #25436D4D;
+    border-radius: 8px;
+    cursor: pointer;
+
+    img {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+.info__product-cards {
+    display: flex;
+    margin-top: 24px;
+    gap: 17px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }

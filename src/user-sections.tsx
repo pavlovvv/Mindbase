@@ -10,7 +10,7 @@ export default function UserSections() {
         <Needs />
         <Offers />
         <Portfolio />
-        <Projects />
+        <Projects isEvent={false} />
     </>
     );
 }

@@ -8,10 +8,15 @@ import popupTop from '../public/Graphic Element.png'
 import arrowLeft from '../public/arrow-left.png'
 import SortPopup from './SortPopup'
 import { PopupTransition } from './Needs'
-import emptyFrame from '../public/empty-frame.png'
 import { Link } from 'react-router-dom';
+import EventDesktop from './EventDekstop';
+import EventMobile from './EventMobile';
 
-export default function Projects() {
+export interface ProjectProps {
+    isEvent: boolean;
+}
+
+export default function Projects({ isEvent }: ProjectProps) {
     const isMobile = useMediaQuery({ query: '(max-width: 767px)' })
 
     const [open, setOpen] = useState(false);
@@ -29,6 +34,11 @@ export default function Projects() {
             <h2 className={styles.info__heading}>
                 Projects
             </h2>
+
+            {isEvent && !isMobile ? <EventDesktop heading='Event' /> :
+                <EventMobile heading='Event' />
+            }
+
             <div className={styles.card_projects}>
                 <div className={styles.card__top}>
                     <div className={styles.card__date}>2024.08.14</div>
@@ -138,84 +148,8 @@ export default function Projects() {
                         <SortPopup />
                     </div>
 
-                    {!isMobile ? <div className={styles.card_projects} style={{ padding: '36px 24px' }}>
-                        <div className={styles['card__project-wrapper']}>
-                            <img src={emptyFrame} className={styles['card__project-img']} alt="project-img" />
-                            <div className={styles['card__project-right']}>
-                                <div className={styles.card__top}>
-                                    <div className={styles.card__date}>2024.08.14</div>
-                                </div>
-                                <div className={styles.card__top}>
-                                    <div className={styles['card__name-left']}>
-                                        <div className={styles.card__heading}>Mindbase platform</div>
-                                    </div>
-
-                                    <Link to="organizations/innovation-hills" className={styles['info__projects-name'] + ' ' + styles['info__main-object_hover']}>
-                                        & Innovation Hills
-                                        <div className={styles.card__heart} />
-                                    </Link>
-                                </div>
-
-                                <div className={styles.card__info}>
-                                    <span className={styles['card__info-location']}>
-                                        <img src={location} />
-                                        <span>Tokyo, Japan</span>
-                                    </span>
-
-                                    <span>
-                                        Add text
-                                    </span>
-                                </div>
-
-                                <div className={styles['info__regular-text']}>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor exercitation ullamco laboris nisi ut aliquip...
-                                </div>
-
-                                <div className={styles['main-button'] + ' ' + styles['card__view-more']}>
-                                    Book now
-                                </div>
-                            </div>
-                        </div>
-                    </div> :
-
-                        <div className={styles.card_projects}>
-                            <div className={styles.card__top}>
-                                <div className={styles.card__date}>2024.08.14</div>
-                                <Link to="organizations/innovation-hills" className={styles['info__projects-name'] + ' ' + styles['info__main-object_hover']}>
-                                    & Innovation Hills
-                                    <div className={styles.card__heart} />
-                                </Link>
-                            </div>
-                            <div className={styles.card__top}>
-                                <div className={styles['card__name-left']}>
-                                    <div className={styles.card__heading}>Event</div>
-                                </div>
-                            </div>
-
-                            <div className={styles.card__info}>
-                                <span className={styles['card__info-location']}>
-                                    <img src={location} />
-                                    <span>Tokyo, Japan</span>
-                                </span>
-
-                                <span>
-                                    Add text
-                                </span>
-                            </div>
-
-                            <div style={{ textAlign: 'center', width: '100%' }}>
-                                <img src={emptyFrame} alt="img" style={{ width: '100%', maxWidth: "300px" }} />
-                            </div>
-                            <div className={styles['info__regular-text']}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor exercitation ullamco laboris nisi ut aliquip...
-                            </div>
-
-                            <div className={styles['main-button'] + ' ' + styles['card__view-more']}>
-                                Book now
-                            </div>
-                        </div>
-
-
+                    {!isMobile ? <EventDesktop heading='Mindbase platform' /> :
+                        <EventMobile heading='Event' />
                     }
 
                     <div className={styles.card_projects}>
