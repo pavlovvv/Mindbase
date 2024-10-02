@@ -4,12 +4,6 @@ import inst from '../public/instagram-mono.png'
 import twitter from '../public/twitter new.png'
 import linkedin from '../public/linkedin-mono.png'
 import styles from './main.module.scss'
-import hajime from '../public/hajime.png'
-import john from '../public/photo-sample.png'
-import sarah from '../public/sarah.png'
-import tony from '../public/tony.png'
-import sam from '../public/sam.png'
-import msg from '../public/msg.png'
 import { useMediaQuery } from 'react-responsive'
 import OrganizationSections from './OrganizationSections'
 import aboutImage from '../public/about image.png'
@@ -17,6 +11,7 @@ import ReactPlayer from 'react-player'
 import video from '../public/1 MINUTE NATURE BREAK 4K.mp4'
 import thumbnail from '../public/thumbnail.jpg'
 import pdf from '../public/pdf.png'
+import Members from './Members'
 
 export default function OrganizationInfo() {
 
@@ -39,67 +34,7 @@ export default function OrganizationInfo() {
 
             <div className={styles['main__info-left-wrapper']}>
 
-                <div className={styles.info__item}>
-                    <h2 className={styles.info__heading} >
-                        Members
-                    </h2>
-
-                    <div className={styles.info__members}>
-                        <div className={styles.info__member}>
-                            <img src={hajime} alt="hajime" />
-                            <div>
-                                <div className={styles.info__member_name}>Hajime Suzuki
-                                </div>
-                                CEO
-                            </div>
-                        </div>
-
-                        <div className={styles.info__member}>
-                            <img src={john} alt="john" />
-                            <div>
-                                <div className={styles.info__member_name}>John Doe
-                                </div>
-                                Senior Developer
-                            </div>
-                            <div className={styles.info__msg}>
-                                <img src={msg} alt="msg" />
-                            </div>
-                        </div>
-
-                        <div className={styles.info__member}>
-                            <img src={sarah} alt="sarah" />
-                            <div>
-                                <div className={styles.info__member_name}>Sarah Smith
-                                </div>
-                                Account Manager
-                            </div>
-
-                            <div className={styles.info__msg}>
-                                <img src={msg} alt="msg" />
-                            </div>
-                        </div>
-
-                        <div className={styles.info__member}>
-                            <img src={sam} alt="sam" />
-                            <div>
-                                <div className={styles.info__member_name}>Sam Jones
-                                </div>
-                                Project Manager
-                            </div>
-                        </div>
-
-                        <div className={styles.info__member}>
-                            <img src={tony} alt="tony" />
-                            <div>
-                                <div className={styles.info__member_name}>Tony Berger
-                                </div>
-                                IT Support Engineer
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className={styles['main-button']}>See all</div>
-                </div>
+                <Members />
 
                 <div className={styles.info__item}>
                     <h2 className={styles.info__heading}>

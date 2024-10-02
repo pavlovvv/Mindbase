@@ -25,6 +25,7 @@
   column-gap: 10px;
   height: 100px;
   padding: 0 33px;
+  background: #F8F7F6;
 }
 
 .header__nav {
@@ -62,6 +63,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .header__right-menu {
@@ -77,6 +79,7 @@
   align-items: center;
   padding: 8px 30px !important;
   max-height: 50px;
+  background: #F8F7F6;
 
   svg {
     width: 153px;
@@ -236,4 +239,40 @@
   @media (max-width: '390px') {
     width: 90vw !important;
   }
+}
+
+@mixin footer-icons($url, $urlHover) {
+  transition: 0.2s all;
+  background: url($url);
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat !important;
+
+  &:hover {
+    background: url($urlHover)
+  }
+}
+
+.footer__apple {
+  width: 32px !important;
+  height: 32px !important;
+  @include footer-icons("../public/apple.png", "../public/apple-hover.png");
+}
+
+.footer__android {
+  width: 32px !important;
+  height: 32px !important;
+  @include footer-icons("../public/android.png", "../public/android-hover.png");
+}
+
+.footer__twitter {
+  @include footer-icons("../public/twitter new.png", "../public/twitter-hover.png");
+}
+
+.footer__linkedin {
+  @include footer-icons("../public/linkedin-mono.png", "../public/linkedin-hover.png");
+}
+
+.footer__instagram {
+  @include footer-icons("../public/instagram-mono.png", "../public/instagram-hover.png");
 }

@@ -9,6 +9,7 @@ import connectIcon from '../public/world.png'
 import settingsIcon from '../public/settings.png'
 import logoutIcon from '../public/log-out.png'
 import orgLogoSample from '../public/org-logo-sample.png'
+import { Link } from "react-router-dom";
 
 export default function PopoverMenu() {
     const [anchorEl, setAnchorEl] = useState<HTMLDivElement | null>(null);
@@ -21,7 +22,7 @@ export default function PopoverMenu() {
         setAnchorEl(null);
     };
 
-    const open = Boolean(anchorEl); // Check if the Popover should be open
+    const open = Boolean(anchorEl);
 
     return (<>
         <div onClick={handleClick} className={styles["header__right-menu"]}>
@@ -52,10 +53,10 @@ export default function PopoverMenu() {
 
                 <div className={popoverStyles["popover__menu-section"]}>
                     <h3 className={popoverStyles["popover__menu-item"]}>My Organizations</h3>
-                    <div className={popoverStyles["popover__menu-item"] + ' ' + popoverStyles["popover__menu-item_org"]}>
+                    <Link to={'/organizations/innovation-hills'} className={popoverStyles["popover__menu-item"] + ' ' + popoverStyles["popover__menu-item_org"]}>
                         <img src={orgLogoSample} />
                         <span>Innovation Hills</span>
-                    </div>
+                    </Link>
 
                     <div className={popoverStyles["popover__menu-item"]}> <img src={messagesIcon} /> <a href="#">Messages</a></div>
                     <div className={popoverStyles["popover__menu-item"]}> <img src={connectIcon} /> <a href="#">Connect</a></div>
@@ -65,8 +66,8 @@ export default function PopoverMenu() {
                 <div className={popoverStyles["popover__menu-section"]}>
                     <h3 className={popoverStyles["popover__menu-item"] + ' ' + popoverStyles["popover__menu-item_heading"]}>My Business</h3>
                     <ul className="business-menu">
-                        <li className={popoverStyles["popover__menu-item"]}><a href="#">My Needs</a></li>
-                        <li className={popoverStyles["popover__menu-item"]}><a href="#">My Offers</a></li>
+                        <li className={popoverStyles["popover__menu-item"]}><Link to="/discover/needs">My Needs</Link></li>
+                        <li className={popoverStyles["popover__menu-item"]}><Link to="/discover/offers">My Offers</Link></li>
                         <li className={popoverStyles["popover__menu-item"]} style={{ color: 'black' }}><a href="#">My Matches</a></li>
                     </ul>
                 </div>

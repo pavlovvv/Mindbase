@@ -8,11 +8,6 @@ import PopoverDiscover from './PopoverDiscover';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { ReactComponent as HorizontalSvg } from '../public/horizontal-svg.svg';
-import inst from '../public/instagram-mono.png'
-import twitter from '../public/twitter new.png'
-import linkedin from '../public/linkedin-mono.png'
-import apple from '../public/apple.png'
-import android from '../public/android.png'
 import { Outlet } from 'react-router-dom';
 
 export default function MainLayout() {
@@ -40,7 +35,7 @@ export default function MainLayout() {
 
   return (
     <>
-      <div className={styles.wrapper}>
+      <div className={styles.wrapper} style={{ minHeight: 'unset', paddingBottom: 0 }}>
 
         {!isLaptop ? <>
           <header className={sticky.isSticky ? styles.header + ' ' + styles.header_sticky : styles.header}>
@@ -57,13 +52,13 @@ export default function MainLayout() {
           </header>
           {sticky.isSticky && <div style={{ width: '100%', height: '100px' }} />} </> :
           <><HeaderMobile isSticky={sticky.isSticky} /> {sticky.isSticky && <div style={{ width: '100%', height: '50px' }} />}</>}
-
-
-        <main>
-          <Outlet />
-        </main>
-
       </div>
+
+      <main>
+        <Outlet />
+      </main>
+
+
       <footer className={styles.footer}>
         <section className={styles.footer__left}>
           <div style={{ maxHeight: '46px' }}>
@@ -74,13 +69,13 @@ export default function MainLayout() {
           </div>
           <div className={styles.footer__links}>
             <div className={styles['footer__links-inner']}>
-              <div>Discover</div>
+              <PopoverDiscover />
               <div>TECHSEARCH</div>
               <div>Projects</div>
               <div className={styles['footer__links-icons']}>
-                <img src={inst} alt="instagram-icon" />
-                <img src={twitter} alt="twitter-icon" />
-                <img src={linkedin} alt="linkedin-icon" />
+                <div className={styles.footer__instagram} />
+                <div className={styles.footer__twitter} />
+                <div className={styles.footer__linkedin} />
               </div>
             </div>
 
@@ -95,8 +90,8 @@ export default function MainLayout() {
 
         <section className={styles.footer__right}>
           <div>Mobile App</div>
-          <div><img src={apple} alt="apple-icon" /></div>
-          <div><img src={android} alt="android-icon" /></div>
+          <div className={styles.footer__apple} />
+          <div className={styles.footer__android} />
         </section>
       </footer>
     </>

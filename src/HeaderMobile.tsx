@@ -12,6 +12,7 @@ import orgLogoSample from '../public/org-logo-sample.png'
 import photoSample from '../public/photo-sample.png';
 import cross from '../public/cross.png'
 import { ReactComponent as HorizontalSvg } from '../public/horizontal-svg.svg';
+import { Link } from "react-router-dom";
 
 interface HeaderProps {
     isSticky: boolean
@@ -42,10 +43,10 @@ export default function HeaderMobile({ isSticky }: HeaderProps) {
                         <div className={popoverStyles["popover__menu-section"]} style={{ border: 0, paddingBottom: 0 }}>
                             <h3 className={popoverStyles['popover__menu-item_dot']}>Profile</h3>
                             <h3 className={popoverStyles["popover__menu-item"]}>My Organizations</h3>
-                            <div className={popoverStyles["popover__menu-item"] + ' ' + popoverStyles["popover__menu-item_org"]}>
+                            <Link to={'/organizations/innovation-hills'} onClick={toggleDrawer(false)} className={popoverStyles["popover__menu-item"] + ' ' + popoverStyles["popover__menu-item_org"]}>
                                 <img src={orgLogoSample} />
                                 <span>Innovation Hills</span>
-                            </div>
+                            </Link>
 
                             <div className={popoverStyles["popover__menu-item"]}> <img src={messagesIcon} /> <a href="#">Messages</a></div>
                             <div className={popoverStyles["popover__menu-item"]}> <img src={connectIcon} /> <a href="#">Connect</a></div>
@@ -60,12 +61,11 @@ export default function HeaderMobile({ isSticky }: HeaderProps) {
                                 <li className={popoverStyles["popover__menu-item"]} style={{ color: 'black' }}><a href="#">My Matches</a></li>
                             </ul>
                         </div>
-
                         <div className={popoverStyles["popover__menu-section"]}>
                             <h1 className={popoverStyles['popover__menu-top-item']}>Discover</h1>
-                            <h3 className={popoverStyles['popover__menu-item_dot']}>Needs</h3>
-                            <h3 className={popoverStyles['popover__menu-item_dot']}>Offers</h3>
-                            <h3 className={popoverStyles['popover__menu-item_dot']}>Organizations</h3>
+                            <Link onClick={toggleDrawer(false)} to={'/discover/needs'} style={{ display: 'block', marginBottom: '10px' }}><h3 className={popoverStyles['popover__menu-item_dot']}>Needs</h3></Link>
+                            <Link onClick={toggleDrawer(false)} to={'/discover/offers'} style={{ display: 'block', marginBottom: '10px' }}> <h3 className={popoverStyles['popover__menu-item_dot']}>Offers</h3></Link>
+                            <Link onClick={toggleDrawer(false)} to={'/organizations/innovation-hills'} style={{ display: 'block', marginBottom: '10px' }}><h3 className={popoverStyles['popover__menu-item_dot']}>Organizations</h3></Link>
                         </div>
 
                         <div className={popoverStyles["popover__menu-section"]}>

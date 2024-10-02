@@ -146,9 +146,8 @@
 .popover_discover {
     border: none;
 
-    &>div {
+    .MuiPaper-root {
         box-shadow: 0px 0px 4px 0px #25436D4D;
-        border-radius: 0px, 14px, 14px, 14px;
     }
 }
 
@@ -172,4 +171,14 @@
     &>div:not(:last-child) {
         margin-bottom: 12px;
     }
+}
+
+.popover_partners {
+    @extend .popover_discover;
+}
+
+.popover_partners__wrapper {
+    @extend .popover_discover__wrapper;
+    width: 152px;
+    background: #BAD2F9;
 }

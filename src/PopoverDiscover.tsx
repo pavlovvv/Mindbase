@@ -1,6 +1,7 @@
 import Popover from "@mui/material/Popover";
 import { useState } from "react";
 import popoverStyles from './popover.module.scss';
+import { Link } from "react-router-dom";
 
 export default function PopoverDiscover() {
     const [anchorEl, setAnchorEl] = useState<HTMLDivElement | null>(null);
@@ -32,13 +33,16 @@ export default function PopoverDiscover() {
                     vertical: 'top',
                     horizontal: 'left',
                 }}
-                sx={{ zIndex: 1500 }}
+                sx={{
+                    zIndex: 1500,
+                    "& .MuiPaper-root": { borderRadius: "0 14px 14px 14px" }
+                }}
                 className={popoverStyles.popover_discover}
             >
                 <div className={popoverStyles.popover_discover__wrapper}>
-                    <div>Needs</div>
-                    <div>Offers</div>
-                    <div>Organizations</div>
+                    <div><Link to={'/discover/needs'}>Needs</Link></div>
+                    <div><Link to={'/discover/offers'}>Offers</Link></div>
+                    <div><Link to={'/organizations/innovation-hills'}>Organizations</Link></div>
                 </div>
 
             </Popover>

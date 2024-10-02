@@ -203,6 +203,8 @@
     border-image-source: linear-gradient(100.05deg, #F8F7F6 0.05%, #FFFFFF 99.95%);
     box-shadow: 0px 0px 4px 0px #25436D4D;
     border-radius: 8px;
+    background: linear-gradient(162.66deg, rgba(255, 255, 255, 0.7) 0.2%, rgba(248, 247, 246, 0.7) 99.8%);
+    width: fit-content;
     cursor: pointer;
 
     img {
@@ -217,4 +219,4 @@
     gap: 17px;
     justify-content: space-between;
     flex-wrap: wrap;
-  }
+}

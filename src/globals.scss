@@ -148,3 +148,30 @@ html::-webkit-scrollbar-track {
   src: local("MPLUS1p-Regular"),
     url("./fonts/MPLUS1p-Regular.ttf") format("truetype");
 }
+
+
+.swiper-button-prev,
+.swiper-button-next {
+  opacity: 0 !important;
+  transition: opacity 0.3s ease;
+  width: 50px !important;
+  height: 50px !important;
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 4px 0px #25436D4D;
+  border-radius: 50%;
+  background: linear-gradient(162.66deg, rgba(255, 255, 255, 0.85) 0.2%, rgba(248, 247, 246, 0.85) 99.8%);
+
+  &::after {
+    font-size: 21px !important;
+    font-weight: 800 !important;
+  }
+
+  @media (max-width: 767px) {
+    opacity: 1 !important;
+  }
+}
+
+.swiper-container:hover .swiper-button-prev,
+.swiper-container:hover .swiper-button-next {
+  opacity: 1;
+}

@@ -23,6 +23,7 @@
     "react-responsive": "^10.0.0",
     "react-router-dom": "^6.26.2",
     "styled-components": "^6.1.13",
+    "swiper": "^11.1.14",
     "typeface-roboto": "^1.1.13",
     "vite-plugin-svgr": "^4.2.0"
   },
