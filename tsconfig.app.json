@@ -28,7 +28,13 @@
       {
         "name": "typescript-plugin-css-modules",
       }
-    ]
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],              
+      "@components/*": ["src/components/*"] ,
+      "@public/*": ["public/*"]
+    }
   },
   "include": [
     "src",

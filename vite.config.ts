@@ -11,4 +11,11 @@ export default defineConfig({
     svgrOptions: { exportType: 'named', ref: true, svgo: false, titleProp: true },
     include: '**/*.svg',
   })],
+  resolve: {
+    alias: {
+      '@': '/src',
+      '@components': '/src/components',
+      '@public': '/public'
+    }
+  }
 })

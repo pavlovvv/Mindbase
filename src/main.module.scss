@@ -351,7 +351,7 @@
   }
 }
 
-@import "./card";
+@import "./components/card/card";
 
 .more-button {
   padding: 8px 80px;
@@ -624,6 +624,6 @@
   }
 }
 
-@import "./main-org";
+@import "./components/organizations/main-org";
 
-@import "./main-discover";
+@import "./components/discover/main-discover";

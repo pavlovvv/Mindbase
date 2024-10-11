@@ -1,14 +1,15 @@
 import styles from './index.module.scss'
 import logo from '../public/logo.png'
-import CustomizedInputBase from './SearchInput';
-import PopoverMenu from './PopoverMenu';
+import CustomizedInputBase from './components/sections/popups/SearchInput';
+import PopoverMenu from './components/popovers/PopoverMenu';
 import { useMediaQuery } from 'react-responsive'
-import HeaderMobile from './HeaderMobile';
-import PopoverDiscover from './PopoverDiscover';
+import HeaderMobile from './components/header/HeaderMobile';
+import PopoverDiscover from './components/popovers/PopoverDiscover';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { ReactComponent as HorizontalSvg } from '../public/horizontal-svg.svg';
 import { Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function MainLayout() {
 
@@ -44,7 +45,7 @@ export default function MainLayout() {
               <span>TECHSEARCH</span>
               <span>Projects</span>
             </nav>
-            <img src={logo} alt="logo" className={styles.header__logo} />
+            <Link to={'/'}><img src={logo} alt="logo" className={styles.header__logo} /> </Link>
             <div className={styles.header__right}>
               <CustomizedInputBase />
               <PopoverMenu />

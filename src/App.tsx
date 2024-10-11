@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ProfilePage from './ProfilePage';
+import ProfilePage from './components/profile/ProfilePage';
 import MainLayout from './MainLayout';
-import OrganizationsPage from './OrganizationsPage';
-import DiscoverOptions from './DiscoverOptions';
-import DiscoverPage from './DiscoverPage';
+import OrganizationsPage from './components/organizations/OrganizationsPage';
+import DiscoverOptions from './components/discover/DiscoverOptions';
+import DiscoverPage from './components/discover/DiscoverPage';
 
 function App() {
   return (
