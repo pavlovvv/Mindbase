@@ -104,6 +104,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  row-gap: 16px;
 
   img {
     height: 24px;
@@ -136,6 +137,9 @@
   font-size: 20px;
   line-height: 30px;
   color: #1E1E1E;
+  max-width: 400px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .card__info {
@@ -198,6 +202,38 @@
   width: min-content;
 }
 
+.product-card_offers {
+  background: linear-gradient(162.66deg, rgba(255, 255, 255, 0.7) 0.2%, rgba(248, 247, 246, 0.7) 99.8%);
+  @media (max-width: 767px) {
+    width: 100%;
+    padding: 16px;
+  }
+}
+
+.product-card__inner {
+  @media (max-width: 767px) {
+    display: flex;
+    gap: 12px;
+  }
+
+  @media (max-width: 389px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .product-card__top {
+    @media (max-width: 767px) {
+      margin-bottom: 10px;
+    }
+  }
+  
+  .info__regular-text {
+    @media (max-width: 767px) {
+      margin-top: 8px;
+    }
+  }
+}
+
 .product-card__top {
   color: #3F58BC;
   font-size: 16px;
@@ -218,6 +254,11 @@
 .product-card__picture {
   min-width: 201px;
   margin: 12px 0;
+}
+
+.product-card__picture_mobile {
+  width: 43vw;
+  height: 40vw
 }
 
 .card_projects {
@@ -283,4 +324,23 @@
 .card__type_mobile-offers {
   @extend .card__type_mobile;
   background: #8AADD8;
+}
+
+.card_organization {
+  @extend .card_offers;
+  background: linear-gradient(162.66deg, rgba(255, 255, 255, 0.7) 0.2%, rgba(248, 247, 246, 0.7) 99.8%);
+
+  &::before {
+    content: '';
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+}
+
+.card__associations {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
 }

@@ -1,7 +1,8 @@
 .shimmer {
     overflow: hidden;
     position: relative;
-    width: fit-content;
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
 
     &::after {

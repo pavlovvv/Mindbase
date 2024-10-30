@@ -33,7 +33,9 @@ export default function CustomizedInputBase() {
                 <img src={searchIcon} alt="search-icon" style={{ width: '20px', height: '20px' }} />
             </IconButton>
             <InputBase
-                sx={{ ml: 1, flex: 1 }}
+                sx={{ ml: 1, flex: 1, '& .css-1jrstcx-MuiInputBase-input': {
+                    padding: 0
+                } }}
                 placeholder="Search"
                 inputProps={{ 'aria-label': 'Search' }}
             />

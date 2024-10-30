@@ -4,7 +4,6 @@ import styles from "@/main.module.scss";
 
 export default function Shimmer({
   children,
-  nameOfClass,
 }: {
   children: React.ReactNode;
   nameOfClass?: keyof typeof styles; // Explicitly tell TypeScript that this must be a valid key from the `styles` object.
@@ -14,8 +13,8 @@ export default function Shimmer({
   const mouseMoveEvent = (e: MouseEvent) => {
     if (!elRef.current) return;
     const { x, y } = elRef.current.getBoundingClientRect();
-    elRef.current.style.setProperty("--x", e.clientX - x as any);
-    elRef.current.style.setProperty("--y", e.clientY - y as any);
+    elRef.current.style.setProperty("--x", (e.clientX - x) as any);
+    elRef.current.style.setProperty("--y", (e.clientY - y) as any);
   };
 
   useEffect(() => {

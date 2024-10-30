@@ -1,10 +1,10 @@
-import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
 import { SelectChangeEvent } from '@mui/material/Select';
 import FormControl from '@mui/material/FormControl';
 import { useState } from 'react';
 import popupStyles from './popup.module.scss'
+import popoverStyles from '@components/popovers/popover.module.scss'
 
 export default function SortPopup() {
 
@@ -16,12 +16,12 @@ export default function SortPopup() {
 
     return (
         <FormControl size="small">
-            <InputLabel id="service-select" sx={{ top: '-5px' }} className={popupStyles.popup__label}>Sort by: Newest or oldest</InputLabel>
+            <InputLabel id="service-select" sx={{ top: '-5px' }} className={popupStyles.popup__label}>Sort by</InputLabel>
             <Select
                 labelId="service-select"
                 id="service-select"
                 value={service}
-                label="Age"
+                label="Sort by"
                 onChange={handleChange}
                 className={popupStyles['popup__top-sort']}
                 sx={{
@@ -37,12 +37,17 @@ export default function SortPopup() {
                         textAlign: "left",
                         paddingRight: '16px'
                     },
+                     "& .MuiPaper-root": { borderRadius: "0 14px 14px 14px" }
 
                 }}
+                inputProps={{MenuProps: {disableScrollLock: true}}}
             >
-                <MenuItem value={10}>Service 1</MenuItem>
-                <MenuItem value={20}>Service 2</MenuItem>
-                <MenuItem value={30}>Service 3</MenuItem>
+                <div style={{width: 200, padding: '8px 16px'}} className={popoverStyles.popover_discover__wrapper}>
+                    <div>From newer to older</div>
+                    <div>Relevance</div>
+                    <div>Need spends</div>
+                    <div>Rating</div>
+                </div>
             </Select>
         </FormControl>
     );

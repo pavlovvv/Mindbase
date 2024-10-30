@@ -7,6 +7,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     position: relative;
+    overscroll-behavior: none;
 
     &>div:not(:first-child) {
         margin-top: 24px;
@@ -164,4 +165,18 @@
     line-height: 24px;
     color: #1E1E1E;
     margin-bottom: 24px;
+}
+
+.search-popup {
+    @extend .popup;
+    background: #F8F7F6;
+    padding-top: 100px;
+
+    @media (max-width: 767px) {
+        width: 100vw;
+    }
+}
+
+.search-popup_bg-blue {
+    background: #E3EDFD;
 }

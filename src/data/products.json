@@ -1,0 +1,21 @@
+{
+    "data": [
+        {
+            "heading": "Travel tents for four people",
+            "minBudget": 30,
+            "maxBudget": 70,
+            "budgetType": "per item",
+            "count": 100,
+            "location": "Tokyo, Japan"
+        },
+        {
+            "heading": "Travel tents for 5 people",
+            "minBudget": 300,
+            "maxBudget": 700,
+            "budgetType": "per item",
+            "count": 101,
+            "location": "USA",
+            "img": "../../public/tent1.png"
+        }    
+    ]
+}
