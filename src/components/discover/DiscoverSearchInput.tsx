@@ -43,6 +43,7 @@ export default function DiscoverSearchInput({
         border: "1px solid #25436D",
         outline: "none",
         width,
+        flex: width === "fullwidth" ? 1 : "1 1 auto",
         background: "transparent",
         transition: "border-color 0.3s ease",
         "&:hover": {

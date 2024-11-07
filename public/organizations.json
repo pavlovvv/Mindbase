@@ -5,7 +5,7 @@
             "minBudget": 0,            
             "maxBudget": 0,
             "location": "Tokyo, Japan",
-            "img": "../../public/org-logo-search.png"
+            "img": "/org-logo-search.png"
         },
 
         {

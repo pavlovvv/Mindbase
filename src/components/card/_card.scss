@@ -204,6 +204,7 @@
 
 .product-card_offers {
   background: linear-gradient(162.66deg, rgba(255, 255, 255, 0.7) 0.2%, rgba(248, 247, 246, 0.7) 99.8%);
+
   @media (max-width: 767px) {
     width: 100%;
     padding: 16px;
@@ -226,7 +227,7 @@
       margin-bottom: 10px;
     }
   }
-  
+
   .info__regular-text {
     @media (max-width: 767px) {
       margin-top: 8px;
@@ -343,4 +344,59 @@
   gap: 16px;
   flex-wrap: wrap;
   align-items: center;
+}
+
+.card__match-type {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: -0.011em;
+  text-align: left;
+  padding: 4px 8px;
+  max-width: fit-content;
+  color: #25436D;
+  position: relative;
+
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='4' ry='4' stroke='%2325436DFF' stroke-width='3' stroke-dasharray='5%2c 12' stroke-dashoffset='12' stroke-linecap='square'/%3e%3c/svg%3e");
+  border-radius: 4px;
+}
+
+.card-matches-mini {
+  position: absolute;
+  padding: 4px 12px;
+  bottom: 124px;
+  left: 22px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #000;
+  height: 29px;
+}
+
+.card__inner-card {
+  margin-top: -15px !important;
+  &>a>div {
+    max-height: 180px;
+    overflow: hidden;
+    margin-top: 0;
+  }
+}
+
+.card__inner-card_mobile {
+  margin-top: 16px !important;
+  &>a>div {
+    max-height: 216px;
+    overflow: hidden;
+    margin-top: 0;
+  }
+}
+
+.card__inner-offer {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: -0.011em;
+  text-align: left;
+  color: #25436D;
+  margin-bottom: 8px;
 }

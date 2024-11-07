@@ -8,7 +8,7 @@
             "budgetType": "per item",
             "location": "Tokyo, Japan",
             "isNew": true,
-            "img": "../../public/tent1.png"
+            "img": "/tent1.png"
         },
 
         {
@@ -19,7 +19,7 @@
             "budgetType": "per item",
             "location": "USA",
             "isNew": false,
-            "img": "../../public/tent2.png"
+            "img": "/tent2.png"
         },
 
         {
@@ -50,7 +50,7 @@
             "budgetType": "per item",
             "location": "USA",
             "isNew": true,
-            "img": "../../public/tent3.png"
+            "img": "/tent3.png"
         },
 
         {
@@ -101,7 +101,7 @@
             "budgetType": "per item",
             "location": "Tokyo, Japan",
             "isNew": true,
-            "img": "../../public/tent4.png"
+            "img": "/tent4.png"
         },
 
         {
@@ -202,7 +202,7 @@
             "budgetType": "per item",
             "location": "USA",
             "isNew": true,
-            "img": "../../public/tent3.png"
+            "img": "/tent3.png"
         },
 
         {
@@ -243,7 +243,7 @@
             "budgetType": "per item",
             "location": "Tokyo, Japan",
             "isNew": true,
-            "img": "../../public/tent1.png"
+            "img": "/tent1.png"
         },
 
         {
@@ -254,7 +254,7 @@
             "budgetType": "per item",
             "location": "USA",
             "isNew": true,
-            "img": "../../public/tent2.png"
+            "img": "/tent2.png"
         },
 
         {
@@ -285,7 +285,7 @@
             "budgetType": "per item",
             "location": "USA",
             "isNew": true,
-            "img": "../../public/tent3.png"
+            "img": "/tent3.png"
         },
 
         {

@@ -15,7 +15,7 @@
             "budgetType": "per item",
             "count": 101,
             "location": "USA",
-            "img": "../../public/tent1.png"
+            "img": "/tent1.png"
         }    
     ]
 }

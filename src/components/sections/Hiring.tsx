@@ -187,7 +187,12 @@ export default function Hiring() {
             className={popupStyles.popup__top}
             style={{ justifyContent: "flex-end" }}
           >
-            <SortPopup />
+            <SortPopup items={[
+                  "From newer to older",
+                  "Relevance",
+                  "Need spends",
+                  "Rating",
+                ]}/>
           </div>
           <div className={styles.card_projects}>
             <div className={styles.card__top}>

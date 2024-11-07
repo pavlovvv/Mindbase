@@ -42,7 +42,7 @@ export default function PopoverMenu() {
                 vertical: 'top',
                 horizontal: 'right',
             }}
-
+            disableScrollLock
             className={popoverStyles.popover}
         >
             <div className={popoverStyles.popover__wrapper}>

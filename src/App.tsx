@@ -5,6 +5,7 @@ import OrganizationsPage from "@components/organizations/OrganizationsPage";
 import DiscoverOptions from "@components/discover/DiscoverOptions";
 import DiscoverPage from "@components/discover/DiscoverPage";
 import DiscoverSearch from "@components/discover/DiscoverSearch";
+import DiscoverMatches from "./components/discover/DiscoverMatches";
 
 function App() {
   return (
@@ -63,6 +64,9 @@ function App() {
           />
 
           <Route path="/card/page" element={<DiscoverPage />} />
+
+          <Route path="/needs/matches" element={<DiscoverMatches />} />
+          <Route path="/offers/matches" element={<DiscoverMatches />} />
         </Route>
       </Routes>
     </Router>

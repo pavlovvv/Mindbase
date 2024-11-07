@@ -11,12 +11,12 @@ import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme";
 import CardDesktop from "../card/CardDesktop";
 import CardMobile from "../card/CardMobile";
-import servicesData from "@/data/services.json";
-import productsData from "@/data/products.json";
-import organizationsData from "@/data/organizations.json";
-import peopleData from "@/data/people.json";
-import offersProducts from "@/data/offers-products.json";
-import { Snackbar, Alert, Slide, Pagination, Dialog } from "@mui/material";
+import servicesData from "@public/services.json";
+import productsData from "@public/products.json";
+import organizationsData from "@public/organizations.json";
+import peopleData from "@public/people.json";
+import offersProducts from "@public/offers-products.json";
+import Dialog from "@mui/material/Dialog";
 import searchPopup from "@public/search-popup.png";
 import popupStyles from "@components/sections/popups/popup.module.scss";
 import { PopupTransition } from "../sections/Needs";
@@ -27,6 +27,8 @@ import Location from "./filters/Location";
 import Terms from "./filters/Terms";
 import Tags from "./filters/Tags";
 import classNames from "classnames";
+import DiscoverPagination from "./DiscoverPagination";
+import DiscoverSnackbar from "./DiscoverSnackbar";
 
 interface SearchProps {
   isCategory?: boolean;
@@ -36,7 +38,7 @@ interface SearchProps {
   isName?: boolean;
 }
 
-interface IDisplayedEl {
+export interface IDisplayedEl {
   heading: string;
   minBudget: number;
   maxBudget: number;
@@ -226,7 +228,14 @@ export default function DiscoverSearch({
                 setSearchTerm={setSearchTerm}
               />
               {!isTablet ? (
-                <SortPopup />
+                <SortPopup
+                  items={[
+                    "From newer to older",
+                    "Relevance",
+                    "Need spends",
+                    "Rating",
+                  ]}
+                />
               ) : (
                 <span onClick={handleClickElOpen}>
                   <img
@@ -242,7 +251,14 @@ export default function DiscoverSearch({
           <section className={styles["search__filters-wrapper"]}>
             {isTablet && (
               <div style={{ width: "fit-content", margin: "0 0 0 auto" }}>
-                <SortPopup />
+                <SortPopup
+                  items={[
+                    "From newer to older",
+                    "Relevance",
+                    "Need spends",
+                    "Rating",
+                  ]}
+                />
               </div>
             )}
             <h2 className={styles["search__filters-heading"]}>Filters</h2>
@@ -467,52 +483,12 @@ export default function DiscoverSearch({
                   </Link>
                 ))}
 
-                {pagesCount > 1 && (
-                  <Pagination
-                    count={pagesCount}
-                    page={page}
-                    onChange={handlePageChange}
-                    shape="rounded"
-                    siblingCount={!isMobile ? 0 : -1}
-                    sx={{
-                      flexBasis: "100%",
-                      "& .MuiPagination-ul": {
-                        justifyContent: "center",
-                        gap: "3px",
-                      },
-                      "& .Mui-selected": {
-                        background: "#25436D !important",
-                        color: "#D2DADF",
-                      },
-                      "&.MuiButtonBase-root": {
-                        padding: "8px 12px",
-                        margin: 0,
-                      },
-
-                      ".MuiPagination-ul": {
-                        flexWrap: "nowrap",
-                        li: {
-                          display: "flex",
-                          justifyContent: "flex-start",
-                          alignItems: "center",
-                          "&:first-of-type": {
-                            gap: "8px",
-                            "> button::after": {
-                              margin: "0 18px",
-                              content: !isMobile ? '"Previous"' : '""',
-                            },
-                          },
-                          "&:last-of-type": {
-                            "> button::before": {
-                              margin: "0 18px",
-                              content: !isMobile ? '"Next"' : '""',
-                            },
-                          },
-                        },
-                      },
-                    }}
-                  />
-                )}
+                <DiscoverPagination
+                  page={page}
+                  handlePageChange={handlePageChange}
+                  pagesCount={pagesCount}
+                  isMobile={isMobile}
+                />
               </section>
             </div>
           </section>
@@ -640,16 +616,10 @@ export default function DiscoverSearch({
         </div>
       </Dialog>
 
-      <Snackbar
-        open={isSnackbarOpened}
-        TransitionComponent={Slide}
-        autoHideDuration={3000}
-        color="#fff"
-      >
-        <Alert variant="filled" severity="error" sx={{ width: "100%" }}>
-          This tag has already been added before
-        </Alert>
-      </Snackbar>
+      <DiscoverSnackbar
+        isSnackbarOpened={isSnackbarOpened}
+        snackbarText="This tag has already been added before"
+      />
     </ThemeProvider>
   );
 }

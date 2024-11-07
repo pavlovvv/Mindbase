@@ -5,15 +5,15 @@
             "location": "Tokyo, Japan",
             "minBudget": 0,            
             "maxBudget": 0,
-            "img": "../../public/photo-full.png",
+            "img": "/photo-full.png",
             "associations": [
                 {
                     "name": "Innovation Hills",
-                    "logo": "../../public/org-logo-search.png"
+                    "logo": "/org-logo-search.png"
                 },
                 {
                     "name": "Shibaura Institute of Technology ",
-                    "logo": "../../public/shibaura.png"
+                    "logo": "/shibaura.png"
                 }
             ]  
         },
@@ -26,7 +26,7 @@
             "associations": [
                 {
                     "name": "Innovation Hills",
-                    "logo": "../../public/org-logo-search.png"
+                    "logo": "/org-logo-search.png"
                 }
             ]  
         },
@@ -43,11 +43,11 @@
             "location": "Tokyo, Japan",
             "minBudget": 0,            
             "maxBudget": 0,
-            "img": "../../public/photo-full.png",
+            "img": "/photo-full.png",
             "associations": [
                 {
                     "name": "Innovation Hills",
-                    "logo": "../../public/org-logo-search.png"
+                    "logo": "/org-logo-search.png"
                 }
             ]  
         },
@@ -57,11 +57,11 @@
             "location": "Tokyo, Japan",
             "minBudget": 0,            
             "maxBudget": 0,
-            "img": "../../public/photo-full.png",
+            "img": "/photo-full.png",
             "associations": [
                 {
                     "name": "Innovation Hills",
-                    "logo": "../../public/org-logo-search.png"
+                    "logo": "/org-logo-search.png"
                 }
             ]  
         },
@@ -71,11 +71,11 @@
             "location": "Tokyo, Japan",
             "minBudget": 0,            
             "maxBudget": 0,
-            "img": "../../public/photo-full.png",
+            "img": "/photo-full.png",
             "associations": [
                 {
                     "name": "Innovation Hills",
-                    "logo": "../../public/org-logo-search.png"
+                    "logo": "/org-logo-search.png"
                 }
             ]  
         },
@@ -85,11 +85,11 @@
             "location": "Tokyo, Japan",
             "minBudget": 0,            
             "maxBudget": 0,
-            "img": "../../public/photo-full.png",
+            "img": "/photo-full.png",
             "associations": [
                 {
                     "name": "Innovation Hills",
-                    "logo": "../../public/org-logo-search.png"
+                    "logo": "/org-logo-search.png"
                 }
             ]  
         },
@@ -99,11 +99,11 @@
             "location": "Tokyo, Japan",
             "minBudget": 0,            
             "maxBudget": 0,
-            "img": "../../public/photo-full.png",
+            "img": "/photo-full.png",
             "associations": [
                 {
                     "name": "Innovation Hills",
-                    "logo": "../../public/org-logo-search.png"
+                    "logo": "/org-logo-search.png"
                 }
             ]  
         },
@@ -113,11 +113,11 @@
             "location": "Tokyo, Japan",
             "minBudget": 0,            
             "maxBudget": 0,
-            "img": "../../public/photo-full.png",
+            "img": "/photo-full.png",
             "associations": [
                 {
                     "name": "Innovation Hills",
-                    "logo": "../../public/org-logo-search.png"
+                    "logo": "/org-logo-search.png"
                 }
             ]  
         },
@@ -127,11 +127,11 @@
             "location": "Tokyo, Japan",
             "minBudget": 0,            
             "maxBudget": 0,
-            "img": "../../public/photo-full.png",
+            "img": "/photo-full.png",
             "associations": [
                 {
                     "name": "Innovation Hills",
-                    "logo": "../../public/org-logo-search.png"
+                    "logo": "/org-logo-search.png"
                 }
             ]  
         },
@@ -141,11 +141,11 @@
             "location": "Tokyo, Japan",
             "minBudget": 0,            
             "maxBudget": 0,
-            "img": "../../public/photo-full.png",
+            "img": "/photo-full.png",
             "associations": [
                 {
                     "name": "Innovation Hills",
-                    "logo": "../../public/org-logo-search.png"
+                    "logo": "/org-logo-search.png"
                 }
             ]  
         },
@@ -155,15 +155,15 @@
             "location": "Tokyo, Japan",
             "minBudget": 0,            
             "maxBudget": 0,
-            "img": "../../public/photo-full.png",
+            "img": "/photo-full.png",
             "associations": [
                 {
                     "name": "Innovation Hills",
-                    "logo": "../../public/org-logo-search.png"
+                    "logo": "/org-logo-search.png"
                 },
                 {
                     "name": "Shibaura Institute of Technology ",
-                    "logo": "../../public/shibaura.png"
+                    "logo": "/shibaura.png"
                 }
             ]  
         },
@@ -176,7 +176,7 @@
             "associations": [
                 {
                     "name": "Innovation Hills",
-                    "logo": "../../public/org-logo-search.png"
+                    "logo": "/org-logo-search.png"
                 }
             ]  
         },
@@ -193,11 +193,11 @@
             "location": "Tokyo, Japan",
             "minBudget": 0,            
             "maxBudget": 0,
-            "img": "../../public/photo-full.png",
+            "img": "/photo-full.png",
             "associations": [
                 {
                     "name": "Innovation Hills",
-                    "logo": "../../public/org-logo-search.png"
+                    "logo": "/org-logo-search.png"
                 }
             ]  
         },
@@ -207,11 +207,11 @@
             "location": "Tokyo, Japan",
             "minBudget": 0,            
             "maxBudget": 0,
-            "img": "../../public/photo-full.png",
+            "img": "/photo-full.png",
             "associations": [
                 {
                     "name": "Innovation Hills",
-                    "logo": "../../public/org-logo-search.png"
+                    "logo": "/org-logo-search.png"
                 }
             ]  
         },
@@ -221,11 +221,11 @@
             "location": "Tokyo, Japan",
             "minBudget": 0,            
             "maxBudget": 0,
-            "img": "../../public/photo-full.png",
+            "img": "/photo-full.png",
             "associations": [
                 {
                     "name": "Innovation Hills",
-                    "logo": "../../public/org-logo-search.png"
+                    "logo": "/org-logo-search.png"
                 }
             ]  
         },
@@ -235,11 +235,11 @@
             "location": "Tokyo, Japan",
             "minBudget": 0,            
             "maxBudget": 0,
-            "img": "../../public/photo-full.png",
+            "img": "/photo-full.png",
             "associations": [
                 {
                     "name": "Innovation Hills",
-                    "logo": "../../public/org-logo-search.png"
+                    "logo": "/org-logo-search.png"
                 }
             ]  
         },
@@ -249,11 +249,11 @@
             "location": "Tokyo, Japan",
             "minBudget": 0,            
             "maxBudget": 0,
-            "img": "../../public/photo-full.png",
+            "img": "/photo-full.png",
             "associations": [
                 {
                     "name": "Innovation Hills",
-                    "logo": "../../public/org-logo-search.png"
+                    "logo": "/org-logo-search.png"
                 }
             ]  
         },
@@ -263,11 +263,11 @@
             "location": "Tokyo, Japan",
             "minBudget": 0,            
             "maxBudget": 0,
-            "img": "../../public/photo-full.png",
+            "img": "/photo-full.png",
             "associations": [
                 {
                     "name": "Innovation Hills",
-                    "logo": "../../public/org-logo-search.png"
+                    "logo": "/org-logo-search.png"
                 }
             ]  
         },
@@ -277,11 +277,11 @@
             "location": "Tokyo, Japan",
             "minBudget": 0,            
             "maxBudget": 0,
-            "img": "../../public/photo-full.png",
+            "img": "/photo-full.png",
             "associations": [
                 {
                     "name": "Innovation Hills",
-                    "logo": "../../public/org-logo-search.png"
+                    "logo": "/org-logo-search.png"
                 }
             ]  
         },
@@ -291,11 +291,11 @@
             "location": "Tokyo, Japan",
             "minBudget": 0,            
             "maxBudget": 0,
-            "img": "../../public/photo-full.png",
+            "img": "/photo-full.png",
             "associations": [
                 {
                     "name": "Innovation Hills",
-                    "logo": "../../public/org-logo-search.png"
+                    "logo": "/org-logo-search.png"
                 }
             ]  
         }

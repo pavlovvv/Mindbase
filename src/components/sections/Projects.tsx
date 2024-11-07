@@ -179,7 +179,12 @@ export default function Projects({ isEvent }: ProjectProps) {
             className={popupStyles.popup__top}
             style={{ justifyContent: "flex-end" }}
           >
-            <SortPopup />
+            <SortPopup items={[
+                  "From newer to older",
+                  "Relevance",
+                  "Need spends",
+                  "Rating",
+                ]}/>
           </div>
 
           {!isMobile ? (

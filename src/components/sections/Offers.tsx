@@ -174,7 +174,12 @@ export default function Offers() {
         <div className={popupStyles.popup}>
           <div className={popupStyles.popup__top}>
             <ServicePopup />
-            <SortPopup />
+            <SortPopup items={[
+                  "From newer to older",
+                  "Relevance",
+                  "Need spends",
+                  "Rating",
+                ]} />
           </div>
 
           {!isMobile ? (
