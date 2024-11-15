@@ -1,0 +1,363 @@
+.settings {
+    display: flex;
+    gap: 76px;
+}
+
+.settings__nav-item {
+    margin-bottom: 16px;
+    background: #E3EDFD;
+    border-radius: 14px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: -0.011em;
+    color: #8B8A8A;
+    padding: 16px;
+    min-width: 300px;
+
+    &>li:not(:last-child) {
+        margin-bottom: 16px;
+    }
+
+    &>li:hover {
+        cursor: pointer;
+        color: #25436D;
+        text-decoration: underline;
+        transition: all 0.2s;
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    @media (max-width: 1439px) {
+        font-size: 20px;
+        line-height: 29px;
+    }
+}
+
+.settings__element {
+    margin-bottom: 32px;
+
+    h4 {
+        margin-bottom: 24px;
+
+        @media (max-width: 767px) {
+            margin-bottom: 9px;
+            padding-left: 16px;
+        }
+    }
+
+    &>div {
+        margin-left: 28px;
+
+        @media (max-width: 767px) {
+            margin: 0;
+            padding: 0 16px;
+        }
+    }
+
+    .info__main-object {
+        .info__left-text {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            max-width: unset;
+        }
+    }
+
+    .info__main-object:nth-child(2) {
+        padding-top: 0;
+    }
+
+    .info__main-object:nth-child(3) {
+        padding-top: 16px;
+    }
+
+    &>h4:first-child {
+
+        @media (max-width: 767px) {
+            margin-bottom: 16px;
+        }
+    }
+}
+
+.settings__heading {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: -0.011em;
+    color: #1E1E1E;
+    padding-left: 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.settings-icon {
+    width: 40px;
+    height: 40px;
+    background: #BAD2F9;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s background ease;
+
+    &:hover {
+        background: #E3EDFD;
+    }
+}
+
+.settings-icon_plus {
+    @extend .settings-icon;
+
+    img {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+.settings-icon_change {
+    @extend .settings-icon;
+
+    img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.settings-icon_cross {
+    @extend .settings-icon;
+
+    img {
+        width: 13px;
+        height: 13px;
+    }
+}
+
+.settings__visability {
+    background: #E3EDFD;
+    border-radius: 14px;
+    width: 100%;
+    display: flex;
+    column-gap: 20px;
+    padding: 32px 28px;
+    margin-top: 32px;
+
+    @media (max-width: 767px) {
+        padding: 24px 16px;
+    }
+}
+
+.settings__visability-image {
+    img {
+        width: 285px;
+        height: max-content;
+        border-radius: 8px;
+    }
+
+    &>div:nth-child(2) {
+        margin: 16px auto 0 auto;
+    }
+
+    @media (max-width: 767px) {
+        display: none;
+    }
+}
+
+.settings__visability-items {
+    display: flex;
+    column-gap: 16px;
+    max-width: 490px;
+    flex-wrap: wrap;
+
+    &>div {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 30px;
+            letter-spacing: -0.011em;
+        }
+
+        @media (max-width: 767px) {
+            flex-basis: 100%;
+
+            div {
+                width: 100%;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        row-gap: 24px;
+    }
+}
+
+.settings__languages-item {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+
+    &:not(:first-child) {
+        margin-top: 16px;
+    }
+
+    @media (max-width: 767px) {
+        column-gap: 8px;
+
+        &>div:nth-child(1),
+        &>div:nth-child(2) {
+            flex-basis: 42%;
+
+            &>div {
+                width: unset;
+            }
+        }
+    }
+}
+
+.settings__buttons {
+    display: flex;
+    column-gap: 24px;
+    padding-top: 20px;
+    width: fit-content;
+    margin-right: 0;
+    margin-left: auto;
+
+    @media (max-width: 1024px) {
+        padding-right: 35px;
+    }
+
+    @media (max-width: 500px) {
+        padding: 0 16px 32px 16px;
+        width: 100%;
+        column-gap: 16px;
+
+        &>div {
+            width: 50%;
+        }
+    }
+
+    @media (max-width: 390px) {
+        flex-wrap: wrap;
+
+        &>div {
+            width: 100%;
+        }
+    }
+}
+
+.settings__buttons_popup {
+    @extend .settings__buttons;
+    column-gap: 16px;
+    padding: 0;
+
+    .main-second-button {
+        width: 184px;
+
+        @media (max-width: 390px) {
+            width: 100%;
+        }
+    }
+
+    .main-button {
+        width: 165px;
+
+        @media (max-width: 390px) {
+            width: 100%;
+        }
+    }
+}
+
+.settings__top_mobile {
+    border-bottom: 1px solid #8B8A8A;
+    margin: 20px 16px 32px 16px;
+    padding-bottom: 16px;
+
+    h2 {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 38.4px;
+        letter-spacing: -0.011em;
+        transition: 0.5s all ease;
+
+        img {
+            width: 17px;
+            height: 10px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        display: none;
+    }
+}
+
+.settings__top-nav_mobile {
+
+    &>li {
+        color: #8B8A8A;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 36px;
+        letter-spacing: -0.011em;
+        list-style: none;
+    }
+
+    &>li:not(:last-child) {
+        margin-bottom: 16px;
+    }
+}
+
+.settings__arrow {
+    transition: 0.2s all ease;
+}
+
+.settings__arrow_rotate {
+    transform: rotate(180deg);
+}
+
+.settings__mobile {
+    display: flex;
+    gap: 45px;
+    padding: 0 16px;
+
+    .settings__heading {
+        padding-left: 0;
+        padding-bottom: 16px;
+    }
+
+    &>div:nth-child(2) {
+        width: 100%;
+    }
+
+    .MuiFormControl-root,
+    .MuiInputBase-root {
+        width: 100% !important;
+    }
+}
+
+.settings__avatar_mobile {
+    min-width: 90px;
+    max-width: 90px;
+    height: 90px;
+    position: relative;
+
+    &>img {
+        border-radius: 50%;
+    }
+}
+
+.settings__avatar-button {
+    position: absolute;
+    right: -15px;
+    top: 0;
+}

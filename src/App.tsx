@@ -6,6 +6,7 @@ import DiscoverOptions from "@components/discover/DiscoverOptions";
 import DiscoverPage from "@components/discover/DiscoverPage";
 import DiscoverSearch from "@components/discover/DiscoverSearch";
 import DiscoverMatches from "./components/discover/DiscoverMatches";
+import SettingsProfile from "./components/settings/SettingsProfile";
 
 function App() {
   return (
@@ -67,6 +68,8 @@ function App() {
 
           <Route path="/needs/matches" element={<DiscoverMatches />} />
           <Route path="/offers/matches" element={<DiscoverMatches />} />
+
+          <Route path="/settings/profile" element={<SettingsProfile />} />
         </Route>
       </Routes>
     </Router>

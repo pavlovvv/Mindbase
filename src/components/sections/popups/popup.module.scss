@@ -180,3 +180,43 @@
 .search-popup_bg-blue {
     background: #E3EDFD;
 }
+
+.education-popup__heading {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: -0.011em;
+    text-align: left;
+}
+
+.education-popup__item {
+    margin-top: 24px;
+    width: 656px;
+
+    &>h2 {
+        @extend .education-popup__heading;
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 600;
+    }
+
+    @media (max-width: 767px) {
+        width: 100%;
+    }
+}
+
+.education-popup__item_heading-grey {
+    color: #8B8A8A;
+}
+
+.popup-fields {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    margin-top: 16px;
+
+    & > div {
+        width: 100%;
+    }
+}

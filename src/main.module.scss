@@ -307,7 +307,7 @@
 }
 
 .info__left-text_heading {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .info__interests-buttons {
@@ -632,3 +632,5 @@
 @import "./components/discover/main-search";
 
 @import "./components/discover/main-matches";
+
+@import "./components/settings/main-settings";

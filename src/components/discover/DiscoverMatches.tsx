@@ -75,7 +75,7 @@ export default function DiscoverMatches() {
                   searchTerm={searchTerm}
                   setSearchTerm={setSearchTerm}
                 />
-                {!isMobile && <TypesPopup />}
+                {!isMobile && <TypesPopup width={154} items={["Service", "Product", "Partnership"]}/>}
               </div>
               {!isMobile && (
                 <SortPopup
@@ -116,7 +116,7 @@ export default function DiscoverMatches() {
                   alignItems: "center",
                 }}
               >
-                <TypesPopup />
+                <TypesPopup width={154} items={["Service", "Product", "Partnership"]}/>
                 <SortPopup
                   items={[
                     "From invites to recomendation",

@@ -27,10 +27,17 @@
     justify-content: space-between;
     margin-top: 20px;
 
+    
+    @media (min-width: 768px) {
+        & > div:first-child {
+            flex: 0 auto;
+        }
+    }
+
     @media (max-width: 767px) {
         margin-top: 36px;
         &>div {
-            flex-basis: 80%;
+            flex: 0 0 80%;
         }
     }
 }
