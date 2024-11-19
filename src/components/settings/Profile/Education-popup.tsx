@@ -1,9 +1,9 @@
 import { useMediaQuery } from "react-responsive";
 import styles from "@/main.module.scss";
-import TypesPopup from "../sections/popups/TypesPopup";
+import TypesPopup from "../../sections/popups/TypesPopup";
 import { TextField } from "@mui/material";
 import Dialog from "@mui/material/Dialog";
-import { PopupTransition } from "./../sections/Needs";
+import { PopupTransition } from "../../sections/Needs";
 import popupStyles from "@components/sections/popups/popup.module.scss";
 import popupTop from "@public/Graphic Element.png";
 import arrowLeft from "@public/arrow-left.png";

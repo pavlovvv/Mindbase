@@ -43,6 +43,11 @@
     margin-top: 24px;
 }
 
+.section-header_edit {
+    @extend .section-header;
+    gap: 26px;
+}
+
 .section-header__line {
     flex: 1;
     height: 1px;
@@ -53,6 +58,20 @@
     color: #25436D;
     font-size: 16px;
     line-height: 24px;
+}
+
+.section-header__title_edit {
+    @extend .section-header__title;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+        width: 13px;
+        height: 8px;
+        transition: all 0.2s ease;
+    }
 }
 
 .matches__cards {

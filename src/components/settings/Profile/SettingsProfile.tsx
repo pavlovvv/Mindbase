@@ -1,10 +1,7 @@
 import { useMediaQuery } from "react-responsive";
-import discoverStyles from "@components/discover/discover.module.scss";
 import styles from "@/main.module.scss";
 import { useState } from "react";
-import { ThemeProvider } from "@mui/material/styles";
-import theme from "../discover/theme";
-import TypesPopup from "../sections/popups/TypesPopup";
+import TypesPopup from "../../sections/popups/TypesPopup";
 import johnDoe from "@public/photo-full.png";
 import { MenuItem, Checkbox, ListItemText, TextField } from "@mui/material";
 import box from "@public/box.png";
@@ -13,11 +10,9 @@ import plusIcon from "@public/plus.png";
 import deleteIcon from "@public/blue-cross.png";
 import SettingsEducation from "./SettingsEducation";
 import SettingsWork from "./SettingsWork";
-import ProfileTopMobile from "./ProfileTopMobile";
 
 export default function SettingsProfile() {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
-  const isTablet = useMediaQuery({ query: "(max-width: 1023px)" });
 
   const interests: string[] = !isMobile
     ? [
@@ -59,43 +54,6 @@ export default function SettingsProfile() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <div className={styles.wrapper}>
-        {isMobile && <ProfileTopMobile />}
-
-        <div className={styles.settings}>
-          <nav style={{ display: isTablet ? "none" : "initial" }}>
-            <h1 className={discoverStyles.discover__heading}>Settings</h1>
-
-            <ol
-              className={styles["settings__nav-item"]}
-              style={{ marginTop: 44 }}
-            >
-              <li
-                style={{
-                  color: "#25436D",
-                  textDecoration: "underline",
-                  fontWeight: 700,
-                }}
-              >
-                Profile settings
-              </li>
-              <li>Contact info</li>
-              <li>My organizations</li>
-            </ol>
-
-            <ol className={styles["settings__nav-item"]}>
-              <li>Needs/Offers</li>
-              <li>Portfolio</li>
-              <li>Projects</li>
-            </ol>
-
-            <ol className={styles["settings__nav-item"]}>
-              <li>Membership & Connects</li>
-              <li>Notification settings</li>
-            </ol>
-          </nav>
-
           <section>
             <div className={styles.settings__element}>
               {!isMobile && (
@@ -300,8 +258,6 @@ export default function SettingsProfile() {
               </div>
             </div>
           </section>
-        </div>
-      </div>
-    </ThemeProvider>
+
   );
 }

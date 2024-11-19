@@ -6,7 +6,9 @@ import DiscoverOptions from "@components/discover/DiscoverOptions";
 import DiscoverPage from "@components/discover/DiscoverPage";
 import DiscoverSearch from "@components/discover/DiscoverSearch";
 import DiscoverMatches from "./components/discover/DiscoverMatches";
-import SettingsProfile from "./components/settings/SettingsProfile";
+import SettingsProfile from "./components/settings/Profile/SettingsProfile";
+import SettingsLayout from "./components/settings/SettingsLayout";
+import SettingsNeedsOffers from "./components/settings/Needs-offers/SettingsNeedsOffers";
 
 function App() {
   return (
@@ -69,7 +71,12 @@ function App() {
           <Route path="/needs/matches" element={<DiscoverMatches />} />
           <Route path="/offers/matches" element={<DiscoverMatches />} />
 
+          <Route path="/settings" element={<SettingsLayout />}>
           <Route path="/settings/profile" element={<SettingsProfile />} />
+
+          <Route path="/settings/needs" element={<SettingsNeedsOffers />} />
+          <Route path="/settings/offers" element={<SettingsNeedsOffers />} />
+          </Route>
         </Route>
       </Routes>
     </Router>

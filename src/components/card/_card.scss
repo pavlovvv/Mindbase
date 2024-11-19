@@ -375,6 +375,7 @@
 
 .card__inner-card {
   margin-top: -15px !important;
+
   &>a>div {
     max-height: 180px;
     overflow: hidden;
@@ -384,6 +385,7 @@
 
 .card__inner-card_mobile {
   margin-top: 16px !important;
+
   &>a>div {
     max-height: 216px;
     overflow: hidden;
@@ -399,4 +401,36 @@
   text-align: left;
   color: #25436D;
   margin-bottom: 8px;
+}
+
+.card__edit-button {
+  width: 40px;
+  height: 40px;
+  background: #BAD2F9;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s background ease;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+
+  img {
+    width: 18px;
+    height: 18px;
+  }
+
+  &:hover {
+    background: #E3EDFD;
+  }
+
+  @media (max-width: 767px) {
+    width: 48px;
+    height: 48px;
+    top: unset;
+    bottom: 17px;
+    right: 16px;
+  }
 }
