@@ -48,7 +48,7 @@ export default function Projects({ isEvent }: ProjectProps) {
           <div className={styles.card__date}>2024.08.14</div>
           {isMobile && (
             <Link
-              to="organizations/innovation-hills"
+              to="/organizations/innovation-hills"
               className={
                 styles["info__projects-name"] +
                 " " +
@@ -66,7 +66,7 @@ export default function Projects({ isEvent }: ProjectProps) {
           </div>
           {!isMobile && (
             <Link
-              to="organizations/innovation-hills"
+              to="/organizations/innovation-hills"
               className={
                 styles["info__projects-name"] +
                 " " +
@@ -107,7 +107,7 @@ export default function Projects({ isEvent }: ProjectProps) {
             <div className={styles.card__heading}>Mindbase platform</div>
           </div>
           <Link
-            to="organizations/innovation-hills"
+            to="/organizations/innovation-hills"
             className={
               styles["info__projects-name"] +
               " " +
@@ -198,7 +198,7 @@ export default function Projects({ isEvent }: ProjectProps) {
               <div className={styles.card__date}>2024.08.14</div>
               {isMobile && (
                 <Link
-                  to="organizations/innovation-hills"
+                  to="/organizations/innovation-hills"
                   className={
                     styles["info__projects-name"] +
                     " " +
@@ -216,7 +216,7 @@ export default function Projects({ isEvent }: ProjectProps) {
               </div>
               {!isMobile && (
                 <Link
-                  to="organizations/innovation-hills"
+                  to="/organizations/innovation-hills"
                   className={
                     styles["info__projects-name"] +
                     " " +

@@ -9,6 +9,7 @@ import DiscoverMatches from "./components/discover/DiscoverMatches";
 import SettingsProfile from "./components/settings/Profile/SettingsProfile";
 import SettingsLayout from "./components/settings/SettingsLayout";
 import SettingsNeedsOffers from "./components/settings/Needs-offers/SettingsNeedsOffers";
+import SettingsProjects from "./components/settings/Projects/SettingsProjects";
 
 function App() {
   return (
@@ -76,6 +77,8 @@ function App() {
 
           <Route path="/settings/needs" element={<SettingsNeedsOffers />} />
           <Route path="/settings/offers" element={<SettingsNeedsOffers />} />
+
+          <Route path="/settings/projects" element={<SettingsProjects />} />
           </Route>
         </Route>
       </Routes>
