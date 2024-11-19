@@ -108,6 +108,16 @@ export default function ProfileTopMobile() {
               Projects
             </li>
           </Link>
+          <Link to="/settings/hiring">
+            <li
+              className={`${
+                isActive("/settings/hiring") &&
+                styles["settings__nav-item_active"]
+              }`}
+            >
+              Hiring
+            </li>
+          </Link>
           <Link to="/settings/membership-connects">
             <li
               className={`${

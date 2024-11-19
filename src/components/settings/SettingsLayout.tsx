@@ -102,6 +102,16 @@ export default function SettingsLayout() {
                   Projects
                 </li>
               </Link>
+              <Link to="/settings/hiring">
+                <li
+                  className={`${
+                    isActive("/settings/hiring") &&
+                    styles["settings__nav-item_active"]
+                  }`}
+                >
+                  Hiring
+                </li>
+              </Link>
             </ol>
 
             <ol

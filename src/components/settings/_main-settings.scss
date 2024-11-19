@@ -391,9 +391,17 @@
 }
 
 .settings-card {
-    &>a>.card>.main-button {
+    .main-second-button {
+        @media (max-width:767px) {
+            width: 184px;
+        }
+    }
+
+    .card__view-more,
+    .main-second-button {
         @media (max-width:767px) {
             margin-right: 62px;
+            height: 44px;
         }
     }
 }

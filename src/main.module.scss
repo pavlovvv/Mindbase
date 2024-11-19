@@ -634,3 +634,56 @@
 @import "./components/discover/main-matches";
 
 @import "./components/settings/main-settings";
+
+.settings-portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  margin-top: 32px;
+
+  @media (max-width: 767px) {
+    column-gap: 16px;
+    row-gap: 6px;
+    margin-top: 0;
+  }
+}
+
+.settings-portfolio__inner {
+  position: relative;
+
+  @media (max-width: 500px) {
+    flex-basis: 47%;    
+  }
+}
+
+.porfolio-project_settings {
+  @extend .porfolio-project;
+
+  @media (max-width: 500px) {
+    max-width: unset;
+
+    img {
+      height: auto;
+    }
+  }
+
+  @media (max-width: 410px) {
+    max-width: 42vw;
+  }
+}
+
+.porfolio-project__name_settings {
+  @extend .porfolio-project__name;
+
+  @media (max-width: 500px) {
+    font-size: 4vw;
+  }
+}
+
+.porfolio-project__instruments_settings {
+  @extend .porfolio-project__instruments;
+
+  @media (max-width: 500px) {
+    font-size: 3.5vw;
+  }
+}

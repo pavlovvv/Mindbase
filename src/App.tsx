@@ -10,6 +10,8 @@ import SettingsProfile from "./components/settings/Profile/SettingsProfile";
 import SettingsLayout from "./components/settings/SettingsLayout";
 import SettingsNeedsOffers from "./components/settings/Needs-offers/SettingsNeedsOffers";
 import SettingsProjects from "./components/settings/Projects/SettingsProjects";
+import SettingsPortfolio from "./components/settings/Portfolio/SettingsPortfolio";
+import SettingsHiring from "./components/settings/Hiring/SettingsHiring";
 
 function App() {
   return (
@@ -79,6 +81,8 @@ function App() {
           <Route path="/settings/offers" element={<SettingsNeedsOffers />} />
 
           <Route path="/settings/projects" element={<SettingsProjects />} />
+          <Route path="/settings/portfolio" element={<SettingsPortfolio />} />
+          <Route path="/settings/hiring" element={<SettingsHiring />} />
           </Route>
         </Route>
       </Routes>

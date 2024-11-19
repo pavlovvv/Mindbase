@@ -107,7 +107,7 @@ export default function SettingsProjects() {
               <div
                 className={styles.settings__buttons}
                 style={{
-                  marginTop: isMobile ? 80 : "inherit",
+                  marginTop: isMobile ? 64 : "inherit",
                   paddingBottom: isMobile ? 0 : "inherit",
                 }}
               >
@@ -161,7 +161,7 @@ export default function SettingsProjects() {
               <div
                 className={styles.settings__buttons}
                 style={{
-                  marginTop: isMobile ? 80 : "inherit",
+                  marginTop: isMobile ? 64 : "inherit",
                   paddingBottom: isMobile ? 0 : "inherit",
                 }}
               >

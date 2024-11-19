@@ -1,24 +1,16 @@
 import { useMediaQuery } from "react-responsive";
 import styles from "@/main.module.scss";
 import { useState } from "react";
-import TypesPopup from "../../sections/popups/TypesPopup";
-import { Link } from "react-router-dom";
-import classNames from "classnames";
-import { useLocation } from "react-router-dom";
 import DiscoverSearchInput from "@/components/discover/DiscoverSearchInput";
 import SortPopup from "@/components/sections/popups/SortPopup";
 import arrow from "@public/arrow-blue-big.png";
-import SettingsCard from "./SettingsCard";
+import SettingsCard from "./SettingsHiringCard";
 import { useCollapse } from "react-collapsed";
 
-export default function SettingsNeedsOffers() {
+export default function SettingsHiring() {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
-  const location = useLocation();
 
   const [searchTerm, setSearchTerm] = useState("");
-
-  const pathParts = location.pathname.split("/");
-  const type1 = pathParts[2];
 
   const [isExpanded, setExpanded] = useState<boolean>(true);
   const { getCollapseProps, getToggleProps } = useCollapse({
@@ -37,31 +29,6 @@ export default function SettingsNeedsOffers() {
   return (
     <section style={{ width: "100%" }}>
       <div className={styles.settings__element}>
-        <div>
-          <div className={styles.matches__switches} style={{ marginTop: 0 }}>
-            <Link
-              to={"/settings/needs"}
-              className={classNames(styles["matches__switches-item"], {
-                [styles["matches__switches-item_active"]]: type1 === "needs",
-              })}
-              style={{ padding: "8px 34px" }}
-            >
-              Needs
-            </Link>
-            <Link
-              to={"/settings/offers"}
-              className={classNames(styles["matches__switches-item"], {
-                [styles["matches__switches-item_active"]]: type1 === "offers",
-              })}
-              style={{ padding: "8px 34px" }}
-            >
-              Offers
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <div className={styles.settings__element}>
         <div className={styles["settings__top-buttons"]}>
           <DiscoverSearchInput
             width={!isMobile ? 328 : "fullwidth"}
@@ -72,36 +39,29 @@ export default function SettingsNeedsOffers() {
             <SortPopup
               items={[
                 "From newer to older",
-                "My needs first",
-                "Organization needs first",
-                "Just my needs",
-                "Just organization needs",
+                "My projects first",
+                "Organization projects first",
+                "Just my projects",
+                "Just organization projects",
               ]}
             />
           )}
         </div>
       </div>
 
-      <div className={styles.settings__element}>
+      {isMobile && (<div className={styles.settings__element}>
         <div className={styles["settings__top-buttons"]}>
-          <TypesPopup
-            width={154}
-            label="All"
-            items={["All", "Public", "Private"]}
+          <SortPopup
+            items={[
+              "From newer to older",
+              "My projects first",
+              "Organization projects first",
+              "Just my projects",
+              "Just organization projects",
+            ]}
           />
-          {isMobile && (
-            <SortPopup
-              items={[
-                "From newer to older",
-                "My needs first",
-                "Organization needs first",
-                "Just my needs",
-                "Just organization needs",
-              ]}
-            />
-          )}
         </div>
-      </div>
+      </div>)}
 
       <div className={styles.settings__element}>
         <div className={styles["settings__top-change-type"]}>
@@ -124,7 +84,7 @@ export default function SettingsNeedsOffers() {
                   onClick: () => setExpanded((prevExpanded) => !prevExpanded),
                 })}
               >
-                My Needs{" "}
+                Hiring
                 <img
                   src={arrow}
                   alt="arrow"
@@ -178,7 +138,7 @@ export default function SettingsNeedsOffers() {
                   onClick: () => set2Expanded((prevExpanded) => !prevExpanded),
                 })}
               >
-                Innovation Hills Needs
+                Innovation Hills Hiring
                 <img
                   src={arrow}
                   alt="arrow"
