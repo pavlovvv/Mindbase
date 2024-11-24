@@ -13,11 +13,12 @@ import IconButton from "@mui/material/IconButton";
 import searchIcon from "@public/search-line.png";
 import styles from "@/index.module.scss";
 import { OutlinedInput } from "@mui/material";
+import { ReactNode } from "react";
 
 interface TypesPopupProps {
-  items: string[] | number[];
+  items: Array<string | number | ReactNode>;
   width: number | "fullWidth";
-  label?: string;
+  label?: string | ReactNode;
   placeholder?: string;
   isSearch?: boolean;
 }
@@ -200,8 +201,8 @@ export default function TypesPopup({
               </Paper>
             )}
 
-            {items.map((item) => (
-              <div key={item}>{item}</div>
+            {items.map((item, i) => (
+              <div key={i}>{item}</div>
             ))}
           </div>
         </Scrollbars>
