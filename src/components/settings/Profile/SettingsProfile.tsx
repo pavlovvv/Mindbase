@@ -247,7 +247,7 @@ export default function SettingsProfile() {
             </div>
 
             <div className={styles.settings__buttons}>
-              <div className={styles["main-second-button"]}>Message</div>
+              <div className={styles["main-second-button"]}>Cancel</div>
 
               <div
                 className={

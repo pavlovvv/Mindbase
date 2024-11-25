@@ -13,6 +13,7 @@ import SettingsProjects from "./components/settings/Projects/SettingsProjects";
 import SettingsPortfolio from "./components/settings/Portfolio/SettingsPortfolio";
 import SettingsHiring from "./components/settings/Hiring/SettingsHiring";
 import SettingsContacts from "./components/settings/Contacts/SettingsContacts";
+import SettingsOrganizations from "./components/settings/Organizations/SettingsOrganizations";
 
 function App() {
   return (
@@ -78,6 +79,7 @@ function App() {
           <Route path="/settings" element={<SettingsLayout />}>
           <Route path="/settings/profile" element={<SettingsProfile />} />
           <Route path="/settings/contact" element={<SettingsContacts />} />
+          <Route path="/settings/organizations" element={<SettingsOrganizations />} />
 
           <Route path="/settings/needs" element={<SettingsNeedsOffers />} />
           <Route path="/settings/offers" element={<SettingsNeedsOffers />} />

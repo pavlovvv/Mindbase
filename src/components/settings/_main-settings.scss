@@ -668,9 +668,102 @@
             margin-bottom: 24px
         }
     }
+
+    .settings-icon_plus {
+        background: rgba(37, 67, 109, 1);
+        min-width: 40px
+    }
 }
 
 .settings__location {
     @extend .settings__contacts;
     background: #BAD2F9;
 }
+
+.settings__organizations-top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  
+    .main-second-button {
+      margin-left: 0;
+      width: 179px;
+    }
+  
+    .settings-icon_plus {
+      display: none;
+    }
+  
+    @media (max-width: 767px) {
+      margin-bottom: 24px;
+      & > div:first-child {
+        padding: inherit;
+        margin-left: 16px;
+      }
+  
+      .main-second-button {
+        display: none;
+      }
+  
+      .settings-icon_plus {
+        display: block;
+        padding: inherit;
+        text-align: center;
+        display: flex;
+        min-width: 40px;
+      }
+    }
+  }
+  
+  .settings__orgainization-cover {
+    width: 100%;
+    height: 176px;
+    background: url("@public/settings-bg.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    border-radius: 8px;
+  
+    & > div {
+      margin: auto !important;
+    } 
+  
+    @media (max-width: 767px) {
+      height: 140px;
+      margin-bottom: 24px;
+    }
+  }
+  
+  .settings__visability_org {
+    @extend .settings__visability;
+    padding: 28px;
+    flex-direction: column;
+    row-gap: 24px;
+  
+    & > div:nth-child(2) {
+      display: flex;
+      gap: 20px;
+    }
+  }
+  
+  .settings__members {
+    display: grid;
+    grid-template-columns: 58px 197px 49px 56px auto;
+    align-items: center;
+    margin-top: 28px;
+    & > img:first-child {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+    }
+  
+    @media (max-width: 390px) {
+      grid-template-columns: 58px 170px 49px 56px auto;
+    }
+  }
+  
+  .settings__sale-channels {
+    & > div {
+      @extend .mui-textfield_fullWidth
+    }
+  }

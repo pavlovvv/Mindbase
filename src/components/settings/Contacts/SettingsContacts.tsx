@@ -271,7 +271,7 @@ export default function SettingsContacts() {
                 <TypesPopup
                   width={!isMobile ? 285 : "fullWidth"}
                   label="Tokyo"
-                  items={["Tokyo", "Yokohama", "Nagasaki", "Kyoto", "Osaka", "Kumamoto"]}
+                  items={["Tokyo", "Yokohama", "Nagasaki", "Okayama", "Osaka", "Kumamoto"]}
                 />
               </div>
             </div>
@@ -282,7 +282,7 @@ export default function SettingsContacts() {
                 <TypesPopup
                   width={!isMobile ? 285 : "fullWidth"}
                   label="Kanto"
-                  items={["Kanto", "Chubu", "Tohoku", "Hokkaido", "Kyushu"]}
+                  items={["Kanto", "Chubu", "Tohoku", "Chugoku", "Kyushu"]}
                 />
               </div>
             </div>
@@ -291,7 +291,7 @@ export default function SettingsContacts() {
       </div>
 
       <div className={styles.settings__buttons}>
-        <div className={styles["main-second-button"]}>Message</div>
+        <div className={styles["main-second-button"]}>Cancel</div>
 
         <div
           className={

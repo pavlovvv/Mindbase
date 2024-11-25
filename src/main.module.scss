@@ -634,9 +634,9 @@
 
 .mui-textfield_fullWidth {
   width: 100%;
-  width: -moz-available;
+  width: -moz-available !important;
   /* WebKit-based browsers will ignore this. */
-  width: -webkit-fill-available;
+  width: -webkit-fill-available !important;
   /* Mozilla-based browsers will ignore this. */
   width: fill-available;
 }
