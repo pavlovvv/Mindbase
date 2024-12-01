@@ -14,6 +14,7 @@ import searchIcon from "@public/search-line.png";
 import styles from "@/index.module.scss";
 import { OutlinedInput } from "@mui/material";
 import { ReactNode } from "react";
+import arrow from "@public/arrow-blue.png";
 
 interface TypesPopupProps {
   items: Array<string | number | ReactNode>;
@@ -21,6 +22,7 @@ interface TypesPopupProps {
   label?: string | ReactNode;
   placeholder?: string;
   isSearch?: boolean;
+  setNewEl?: (newEl: string) => void
 }
 
 export default function TypesPopup({
@@ -29,6 +31,7 @@ export default function TypesPopup({
   label,
   placeholder,
   isSearch,
+  setNewEl
 }: TypesPopupProps) {
   const [service, setService] = useState("");
   const [open, setOpen] = useState(false);
@@ -77,6 +80,13 @@ export default function TypesPopup({
         onClose={() => {
           if (!focus) setOpen(false);
         }}
+        IconComponent={(props) => (
+          <img
+            {...props}
+            src={arrow}
+            style={{ top: "unset", right: "21px", transition: "all 0.2s ease" }}
+          />
+        )}
         renderValue={() => {
           if (placeholder) {
             return <Typography color="#8B8A8A">{placeholder}</Typography>;
@@ -145,11 +155,10 @@ export default function TypesPopup({
           )}
         >
           <div
-            className={`${popoverStyles.popover__settings_wrapper} ${
-              label &&
+            className={`${popoverStyles.popover__settings_wrapper} ${label &&
               !isSearch &&
               popoverStyles["popover__settings_wrapper_first-el-decorated"]
-            }`}
+              }`}
           >
             {isSearch && (
               <Paper
@@ -202,7 +211,7 @@ export default function TypesPopup({
             )}
 
             {items.map((item, i) => (
-              <div key={i}>{item}</div>
+              <div key={i} onClick={() => setNewEl && setNewEl(String(item))}>{item}</div>
             ))}
           </div>
         </Scrollbars>

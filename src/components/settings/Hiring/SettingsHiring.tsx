@@ -6,6 +6,9 @@ import SortPopup from "@/components/sections/popups/SortPopup";
 import arrow from "@public/arrow-blue-big.png";
 import SettingsCard from "./SettingsHiringCard";
 import { useCollapse } from "react-collapsed";
+import SettingsPopup2 from "../Popups/SettingsPopup2";
+import pdfIcon from "@public/settings-pdf.png"
+import linkIcon from "@public/settings-link.png"
 
 export default function SettingsHiring() {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
@@ -25,6 +28,16 @@ export default function SettingsHiring() {
     collapsedHeight: 0,
     hasDisabledAnimation: true,
   });
+
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <section style={{ width: "100%" }}>
@@ -115,6 +128,7 @@ export default function SettingsHiring() {
                   className={
                     styles["main-button"] + " " + styles["card__view-more"]
                   }
+                  onClick={handleClickOpen}
                 >
                   Add new
                 </div>
@@ -169,6 +183,7 @@ export default function SettingsHiring() {
                   className={
                     styles["main-button"] + " " + styles["card__view-more"]
                   }
+                  onClick={handleClickOpen}
                 >
                   Add new
                 </div>
@@ -177,6 +192,20 @@ export default function SettingsHiring() {
           </section>
         </div>
       </div>
+      <SettingsPopup2
+        files={[linkIcon, pdfIcon]}
+        isLink
+        heading={"vacancy card"}
+        open={open}
+        isBudget
+        isVacancy
+        isLocation
+        isExperience
+        isEnglish
+        titlePlaceholder="Vacancy card title"
+        handleClose={handleClose}
+        descriptionPlaceholder="Briefly describe your case"
+      />
     </section>
   );
 }

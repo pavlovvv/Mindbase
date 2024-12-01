@@ -27,6 +27,12 @@ const theme = createTheme({
             {
               borderColor: "#8AADD8",
             },
+          "& .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline": {
+            borderColor: "#EC2D2D",
+          },
+          "& .MuiOutlinedInput-root.Mui-error": {
+            backgroundColor: "#f7eceb",
+          },
         },
       },
     },
@@ -42,7 +48,6 @@ const theme = createTheme({
         },
       },
     },
-
     MuiPaper: {
       styleOverrides: {
         root: {

@@ -10,6 +10,9 @@ import SortPopup from "@/components/sections/popups/SortPopup";
 import arrow from "@public/arrow-blue-big.png";
 import SettingsCard from "./SettingsCard";
 import { useCollapse } from "react-collapsed";
+import SettingsPopup1 from "../Popups/SettingsPopup1";
+import SettingsPopup2 from "../Popups/SettingsPopup2";
+import pdfIcon from "@public/settings-pdf.png"
 
 export default function SettingsNeedsOffers() {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
@@ -33,6 +36,28 @@ export default function SettingsNeedsOffers() {
     collapsedHeight: 0,
     hasDisabledAnimation: true,
   });
+
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const [currentChoice, setCurrentChoice] = useState<string>("Service");
+
+  const [open2, set2Open] = useState(false);
+
+  const handle2ClickOpen = () => {
+    set2Open(true);
+  };
+
+  const handle2Close = () => {
+    set2Open(false);
+  };
 
   return (
     <section style={{ width: "100%" }}>
@@ -155,6 +180,7 @@ export default function SettingsNeedsOffers() {
                   className={
                     styles["main-button"] + " " + styles["card__view-more"]
                   }
+                  onClick={handleClickOpen}
                 >
                   Add new
                 </div>
@@ -209,6 +235,7 @@ export default function SettingsNeedsOffers() {
                   className={
                     styles["main-button"] + " " + styles["card__view-more"]
                   }
+                  onClick={handleClickOpen}
                 >
                   Add new
                 </div>
@@ -217,6 +244,20 @@ export default function SettingsNeedsOffers() {
           </section>
         </div>
       </div>
+
+      <SettingsPopup1 open={open} handleClickOpen={handle2ClickOpen} handleClose={handleClose} currentChoice={currentChoice} setCurrentChoice={setCurrentChoice} />
+
+      <SettingsPopup2
+        isBudget
+        isTerms
+        isLocation
+        files={[pdfIcon]}
+        isType
+        heading={type1 === "needs" ? "need" : "offer"}
+        open={open2}
+        handleClose={handle2Close}
+        currentChoice={currentChoice}
+        setCurrentChoice={setCurrentChoice} />
     </section>
   );
 }

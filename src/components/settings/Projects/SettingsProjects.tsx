@@ -6,6 +6,11 @@ import SortPopup from "@/components/sections/popups/SortPopup";
 import arrow from "@public/arrow-blue-big.png";
 import SettingsCard from "./SettingsProjectsCard";
 import { useCollapse } from "react-collapsed";
+import SettingsPopup2 from "../Popups/SettingsPopup2";
+import pdfIcon from "@public/settings-pdf.png"
+import vidIcon from "@public/settings-vid.png"
+import imgIcon from "@public/settings-img.png"
+import linkIcon from "@public/settings-link.png"
 
 export default function SettingsProjects() {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
@@ -25,6 +30,16 @@ export default function SettingsProjects() {
     collapsedHeight: 0,
     hasDisabledAnimation: true,
   });
+
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <section style={{ width: "100%" }}>
@@ -51,17 +66,17 @@ export default function SettingsProjects() {
 
       {isMobile && (<div className={styles.settings__element}>
         <div className={styles["settings__top-buttons"]}>
-            <SortPopup
-              items={[
-                "From newer to older",
-                "My projects first",
-                "Organization projects first",
-                "Just my projects",
-                "Just organization projects",
-              ]}
-            />
+          <SortPopup
+            items={[
+              "From newer to older",
+              "My projects first",
+              "Organization projects first",
+              "Just my projects",
+              "Just organization projects",
+            ]}
+          />
         </div>
-      </div>          )}
+      </div>)}
 
       <div className={styles.settings__element}>
         <div className={styles["settings__top-change-type"]}>
@@ -115,6 +130,7 @@ export default function SettingsProjects() {
                   className={
                     styles["main-button"] + " " + styles["card__view-more"]
                   }
+                  onClick={handleClickOpen}
                 >
                   Add new
                 </div>
@@ -169,6 +185,7 @@ export default function SettingsProjects() {
                   className={
                     styles["main-button"] + " " + styles["card__view-more"]
                   }
+                  onClick={handleClickOpen}
                 >
                   Add new
                 </div>
@@ -177,6 +194,17 @@ export default function SettingsProjects() {
           </section>
         </div>
       </div>
+
+      <SettingsPopup2
+        files={[imgIcon, vidIcon, linkIcon, pdfIcon]}
+        isGallery
+        heading={"project"}
+        open={open}
+        titlePlaceholder="Project title"
+        handleClose={handleClose}
+        isLocation
+        descriptionPlaceholder="Briefly describe your project"
+      />
     </section>
   );
 }

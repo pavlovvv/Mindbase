@@ -112,24 +112,24 @@ export default function EducationPopup({
       sx={
         !isMobile
           ? {
-              backdropFilter: "blur(5px) sepia(5%)",
-              "& .MuiDialog-paper": {
-                borderRadius: "14px",
-                maxWidth: "none",
-                maxHeight: "none",
-                margin: 0,
-              },
-            }
+            backdropFilter: "blur(5px) sepia(5%)",
+            "& .MuiDialog-paper": {
+              borderRadius: "14px",
+              maxWidth: "none",
+              maxHeight: "none",
+              margin: 0,
+            },
+          }
           : {
-              "& .MuiDialog-paper": {
-                maxWidth: "none",
-                maxHeight: "none",
-                margin: 0,
-              },
-              "& .MuiDialog-container": {
-                alignItems: "stretch",
-              },
-            }
+            "& .MuiDialog-paper": {
+              maxWidth: "none",
+              maxHeight: "none",
+              margin: 0,
+            },
+            "& .MuiDialog-container": {
+              alignItems: "stretch",
+            },
+          }
       }
     >
       <div
@@ -161,7 +161,7 @@ export default function EducationPopup({
 
         <div className={popupStyles["education-popup__item"]}>
           <h2>
-            Dates attended
+            Dates attended{" "}
             <span className={popupStyles["education-popup__item_heading-grey"]}>
               (Optional)
             </span>

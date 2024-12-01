@@ -9,6 +9,11 @@ import portfolioFrame1 from "@public/portfolio-frame-1.png";
 import portfolioFrame2 from "@public/portfolio-frame-2.png";
 import emptyFrame from "@public/empty-frame.png";
 import SettingsPortfolioCard from "./SettingsPortfolioCard";
+import SettingsPopup2 from "../Popups/SettingsPopup2";
+import pdfIcon from "@public/settings-pdf.png"
+import vidIcon from "@public/settings-vid.png"
+import imgIcon from "@public/settings-img.png"
+import linkIcon from "@public/settings-link.png"
 
 export default function SettingsPortfolio() {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
@@ -28,6 +33,16 @@ export default function SettingsPortfolio() {
     collapsedHeight: 0,
     hasDisabledAnimation: true,
   });
+
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <section style={{ width: "100%" }}>
@@ -101,12 +116,12 @@ export default function SettingsPortfolio() {
 
             <div {...getCollapseProps()}>
               <div className={styles["settings-portfolio"]}>
-                <SettingsPortfolioCard img={portfolioFrame1}/>
+                <SettingsPortfolioCard img={portfolioFrame1} />
 
-                <SettingsPortfolioCard img={portfolioFrame2}/>
+                <SettingsPortfolioCard img={portfolioFrame2} />
 
-                {isMobile && <SettingsPortfolioCard img={portfolioFrame1}/>}
-                {isMobile && <SettingsPortfolioCard img={portfolioFrame1}/>}
+                {isMobile && <SettingsPortfolioCard img={portfolioFrame1} />}
+                {isMobile && <SettingsPortfolioCard img={portfolioFrame1} />}
               </div>
               <div
                 className={styles.settings__buttons}
@@ -119,6 +134,7 @@ export default function SettingsPortfolio() {
                   className={
                     styles["main-button"] + " " + styles["card__view-more"]
                   }
+                  onClick={handleClickOpen}
                 >
                   Add new
                 </div>
@@ -153,11 +169,11 @@ export default function SettingsPortfolio() {
             </div>
 
             <div {...exp2.getCollapseProps()}>
-            <div className={styles["settings-portfolio"]}>
-                <SettingsPortfolioCard img={emptyFrame}/>
+              <div className={styles["settings-portfolio"]}>
+                <SettingsPortfolioCard img={emptyFrame} />
 
-                {isMobile && <SettingsPortfolioCard img={portfolioFrame1}/>}
-                {isMobile && <SettingsPortfolioCard img={portfolioFrame1}/>}
+                {isMobile && <SettingsPortfolioCard img={portfolioFrame1} />}
+                {isMobile && <SettingsPortfolioCard img={portfolioFrame1} />}
               </div>
               <div
                 className={styles.settings__buttons}
@@ -170,6 +186,7 @@ export default function SettingsPortfolio() {
                   className={
                     styles["main-button"] + " " + styles["card__view-more"]
                   }
+                  onClick={handleClickOpen}
                 >
                   Add new
                 </div>
@@ -178,6 +195,18 @@ export default function SettingsPortfolio() {
           </section>
         </div>
       </div>
+
+      <SettingsPopup2
+        files={[imgIcon, vidIcon, linkIcon, pdfIcon]}
+        isLink
+        isGallery
+        heading={"case"}
+        open={open}
+        titlePlaceholder="Case title"
+        handleClose={handleClose}
+        showTags
+        descriptionPlaceholder="Briefly describe your case"
+      />
     </section>
   );
 }
