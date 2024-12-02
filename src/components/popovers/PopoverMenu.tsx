@@ -46,10 +46,12 @@ export default function PopoverMenu() {
             className={popoverStyles.popover}
         >
             <div className={popoverStyles.popover__wrapper}>
-                <div className={popoverStyles.popover__top + ' ' + popoverStyles["popover__menu-section"]}>
+                <Link to={"/"} className={popoverStyles.popover__top + ' ' + popoverStyles["popover__menu-section"]}>
+
                     <img src={photoSample} alt="Profile Picture" style={{ width: '44px', borderRadius: '50%' }} />
                     <span className="username">John Doe</span>
-                </div>
+
+                </Link>
 
                 <div className={popoverStyles["popover__menu-section"]}>
                     <h3 className={popoverStyles["popover__menu-item"]}>My Organizations</h3>
@@ -60,7 +62,7 @@ export default function PopoverMenu() {
 
                     <div className={popoverStyles["popover__menu-item"]}> <img src={messagesIcon} /> <a href="#">Messages</a></div>
                     <div className={popoverStyles["popover__menu-item"]}> <img src={connectIcon} /> <a href="#">Connect</a></div>
-                    <div className={popoverStyles["popover__menu-item"]}> <img src={settingsIcon} /> <a href="#">Settings</a></div>
+                    <Link to={"/settings/profile"} className={popoverStyles["popover__menu-item"]}> <img src={settingsIcon} /> <a href="#">Settings</a></Link>
                 </div>
 
                 <div className={popoverStyles["popover__menu-section"]}>

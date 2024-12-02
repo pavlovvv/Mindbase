@@ -199,6 +199,14 @@
     min-height: auto !important;
 }
 
+.select__menu-item_settings {
+    @extend .select__menu-item;
+
+    @media (max-width: 767px) {
+        margin: 0 16px !important;
+    }
+}
+
 .select__checkbox-icon {
     width: 18px;
     height: 18px;

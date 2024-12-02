@@ -29,16 +29,18 @@ export default function HeaderMobile({ isSticky }: HeaderProps) {
     return (
         <header className={isSticky ? styles.header_mobile + ' ' + styles.header_sticky : styles.header_mobile}>
             <img src={burger} alt="burger" className={styles.header__burger} onClick={toggleDrawer(true)} />
-            <HorizontalSvg />
+            <Link to={"/"}>
+                <HorizontalSvg />
+            </Link>
             <img src={search} alt="search" className={styles.header__search} />
 
             <Drawer sx={{ zIndex: 1500 }} open={open} onClose={toggleDrawer(false)}>
                 <div className={styles.drawer}>
                     <div className={popoverStyles.popover__wrapper_mobile}>
-                        <div className={popoverStyles.popover__top + ' ' + popoverStyles["popover__menu-section"]}>
+                        <Link to={"/"} className={popoverStyles.popover__top + ' ' + popoverStyles["popover__menu-section"]}>
                             <img src={photoSample} alt="Profile Picture" style={{ width: '44px', borderRadius: '50%' }} />
                             <span className="username">John Doe</span>
-                        </div>
+                        </Link>
 
                         <div className={popoverStyles["popover__menu-section"]} style={{ border: 0, paddingBottom: 0 }}>
                             <h3 className={popoverStyles['popover__menu-item_dot']}>Profile</h3>
@@ -50,7 +52,7 @@ export default function HeaderMobile({ isSticky }: HeaderProps) {
 
                             <div className={popoverStyles["popover__menu-item"]}> <img src={messagesIcon} /> <a href="#">Messages</a></div>
                             <div className={popoverStyles["popover__menu-item"]}> <img src={connectIcon} /> <a href="#">Connect</a></div>
-                            <div className={popoverStyles["popover__menu-item"]}> <img src={settingsIcon} /> <a href="#">Settings</a></div>
+                            <Link to={"/settings/profile"} className={popoverStyles["popover__menu-item"]}> <img src={settingsIcon} /> <a href="#">Settings</a></Link>
                         </div>
 
                         <div className={popoverStyles["popover__menu-section"]}>

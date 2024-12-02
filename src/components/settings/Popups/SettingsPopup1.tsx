@@ -1,13 +1,12 @@
-import { useMediaQuery } from "react-responsive";
 import styles from "@/main.module.scss";
 import { useLocation } from "react-router-dom";
 import popupStyles from "@components/sections/popups/popup.module.scss";
 import popupTop from "@public/Graphic Element.png";
 import arrowLeft from "@public/arrow-left.png";
-import { PopupTransition } from "@/components/sections/Needs";
-import { MenuItem, ListItemText, Checkbox, Dialog } from "@mui/material";
+import { MenuItem, ListItemText, Checkbox } from "@mui/material";
 import dotActive from "@public/dot-active.png"
-import dot from "@public/Dot.png"
+import dot from "@public/dot.png"
+import withDialog from "@/withDialog";
 
 interface SettingsPopupProps {
   open: boolean
@@ -18,7 +17,6 @@ interface SettingsPopupProps {
 }
 
 export default function SettingsPopup1({ open, handleClose, currentChoice, setCurrentChoice, handleClickOpen }: SettingsPopupProps) {
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
   const location = useLocation();
 
   const pathParts = location.pathname.split("/");
@@ -26,37 +24,10 @@ export default function SettingsPopup1({ open, handleClose, currentChoice, setCu
 
   const choices = ["Service", "Partnership", "Product"];
 
-  return (
-    <Dialog
-      open={open}
-      TransitionComponent={PopupTransition}
-      keepMounted
-      disableScrollLock
-      onClose={handleClose}
-      aria-describedby="alert-dialog-slide-description"
-      sx={
-        !isMobile
-          ? {
-            backdropFilter: "blur(5px) sepia(5%)",
-            "& .MuiDialog-paper": {
-              borderRadius: "14px",
-              maxWidth: "none",
-              maxHeight: "none",
-              margin: 0,
-            },
-          }
-          : {
-            "& .MuiDialog-paper": {
-              maxWidth: "none",
-              maxHeight: "none",
-              margin: 0,
-            },
-            "& .MuiDialog-container": {
-              alignItems: "stretch",
-            },
-          }
-      }
-    >
+  return withDialog({
+    open,
+    handleClose,
+    children: (
       <div className={`${popupStyles.popup} ${popupStyles["settings-popup"]} ${type === "offers" && popupStyles["popup__bg-white"]}`}>
         <div>
           <div className={popupStyles["education-popup__item_heading-grey"]} style={{ fontSize: "14px", letterSpacing: 2 }}>1/2</div>
@@ -116,6 +87,6 @@ export default function SettingsPopup1({ open, handleClose, currentChoice, setCu
           <img src={popupTop} className={popupStyles["popup__bg-right"]} style={{ position: 'absolute', right: 100 }} />
         </div>
       </div>
-    </Dialog>
-  );
-}
+    ),
+  });
+};

@@ -14,6 +14,8 @@ import SettingsPortfolio from "./components/settings/Portfolio/SettingsPortfolio
 import SettingsHiring from "./components/settings/Hiring/SettingsHiring";
 import SettingsContacts from "./components/settings/Contacts/SettingsContacts";
 import SettingsOrganizations from "./components/settings/Organizations/SettingsOrganizations";
+import SettingsNotification from "./components/settings/Notification/SettingsNotification";
+import NotFound from "./NotFound";
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<ProfilePage />} />
+          <Route path="*" element={<NotFound />} />
           <Route
             path="/organizations/innovation-hills"
             element={<OrganizationsPage />}
@@ -87,6 +90,8 @@ function App() {
           <Route path="/settings/projects" element={<SettingsProjects />} />
           <Route path="/settings/portfolio" element={<SettingsPortfolio />} />
           <Route path="/settings/hiring" element={<SettingsHiring />} />
+
+          <Route path="/settings/notification" element={<SettingsNotification />} />
           </Route>
         </Route>
       </Routes>

@@ -7,8 +7,7 @@ import DiscoverSearchInput from "@/components/discover/DiscoverSearchInput";
 import popupStyles from "@components/sections/popups/popup.module.scss";
 import popupTop from "@public/Graphic Element.png";
 import arrowLeft from "@public/arrow-left.png";
-import { PopupTransition } from "@/components/sections/Needs";
-import { TextField, Dialog, Snackbar, Slide, SnackbarCloseReason } from "@mui/material";
+import { TextField, Snackbar, Slide, SnackbarCloseReason } from "@mui/material";
 import deleteIcon from "@public/blue-cross.png"
 import Categories from "@/components/discover/filters/Categories";
 import participantLogo from "@public/org-logo-mobile.png"
@@ -17,6 +16,7 @@ import successIcon from "@public/success.png"
 import SettingsGallery from "./Gallery";
 import SettingsDescription from "./Description";
 import SettingsTags from "./Tags";
+import withDialog from "@/withDialog";
 
 
 interface SettingsPopupProps {
@@ -107,37 +107,11 @@ export default function SettingsPopup2({
     return "Title";
   })();
 
-  return (
-    <Dialog
-      open={open}
-      TransitionComponent={PopupTransition}
-      keepMounted
-      disableScrollLock
-      onClose={handleClose}
-      aria-describedby="alert-dialog-slide-description"
-      sx={
-        !isMobile
-          ? {
-            backdropFilter: "blur(5px) sepia(5%)",
-            "& .MuiDialog-paper": {
-              borderRadius: "14px",
-              maxWidth: "none",
-              maxHeight: "none",
-              margin: 0,
-            },
-          }
-          : {
-            "& .MuiDialog-paper": {
-              maxWidth: "none",
-              maxHeight: "none",
-              margin: 0,
-            },
-            "& .MuiDialog-container": {
-              alignItems: "stretch",
-            },
-          }
-      }
-    >
+  return withDialog({
+    open,
+    handleClose,
+    children: (
+      <>
       <div className={`${popupStyles.popup} ${popupStyles["settings-popup-2"]} ${type !== "needs" && popupStyles["popup__bg-white"]}`}>
         {currentChoice && <div className={popupStyles["education-popup__item_heading-grey"]} style={{ fontSize: "14px", letterSpacing: 2 }}>2/2</div>}
         <h2 className={popupStyles["settings-popup__heading"]}>Add new {heading}
@@ -393,6 +367,7 @@ export default function SettingsPopup2({
           }
         </div>
       </Snackbar>
-    </Dialog>
-  );
-}
+      </>
+  ),
+});
+};

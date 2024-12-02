@@ -21,7 +21,14 @@ export default function SettingsNeedsOffers() {
   const [searchTerm, setSearchTerm] = useState("");
 
   const pathParts = location.pathname.split("/");
-  const type1 = pathParts[2];
+  const type = pathParts[2];
+
+  const my1 = type === "needs" ? "My Needs" : "My Offers"
+  const my2 = type === "needs" ? "Innovation Hills Needs" : "Innovation Hills Offers"
+
+  const [currentFilter, setCurrentFilter] = useState<string>("All")
+  const filters = ["All", my1, my2];
+  const reorderedFilters = [currentFilter, ...filters.filter(item => item !== currentFilter)];
 
   const [isExpanded, setExpanded] = useState<boolean>(true);
   const { getCollapseProps, getToggleProps } = useCollapse({
@@ -67,7 +74,7 @@ export default function SettingsNeedsOffers() {
             <Link
               to={"/settings/needs"}
               className={classNames(styles["matches__switches-item"], {
-                [styles["matches__switches-item_active"]]: type1 === "needs",
+                [styles["matches__switches-item_active"]]: type === "needs",
               })}
               style={{ padding: "8px 34px" }}
             >
@@ -76,7 +83,7 @@ export default function SettingsNeedsOffers() {
             <Link
               to={"/settings/offers"}
               className={classNames(styles["matches__switches-item"], {
-                [styles["matches__switches-item_active"]]: type1 === "offers",
+                [styles["matches__switches-item_active"]]: type === "offers",
               })}
               style={{ padding: "8px 34px" }}
             >
@@ -111,8 +118,9 @@ export default function SettingsNeedsOffers() {
         <div className={styles["settings__top-buttons"]}>
           <TypesPopup
             width={154}
-            label="All"
-            items={["All", "Public", "Private"]}
+            label={currentFilter}
+            setNewEl={setCurrentFilter}
+            items={reorderedFilters}
           />
           {isMobile && (
             <SortPopup
@@ -135,7 +143,7 @@ export default function SettingsNeedsOffers() {
         </div>
       </div>
 
-      <div className={styles.settings__element}>
+      {(currentFilter === my1 || currentFilter === "All") && <div className={styles.settings__element}>
         <div>
           <section
             className={styles.matches__cards}
@@ -149,7 +157,7 @@ export default function SettingsNeedsOffers() {
                   onClick: () => setExpanded((prevExpanded) => !prevExpanded),
                 })}
               >
-                My Needs{" "}
+                {my1}{" "}
                 <img
                   src={arrow}
                   alt="arrow"
@@ -188,9 +196,9 @@ export default function SettingsNeedsOffers() {
             </div>
           </section>
         </div>
-      </div>
+      </div>}
 
-      <div className={styles.settings__element}>
+      {(currentFilter === my2 || currentFilter === "All") && <div className={styles.settings__element}>
         <div>
           <section
             className={styles.matches__cards}
@@ -204,7 +212,7 @@ export default function SettingsNeedsOffers() {
                   onClick: () => set2Expanded((prevExpanded) => !prevExpanded),
                 })}
               >
-                Innovation Hills Needs
+                {my2}
                 <img
                   src={arrow}
                   alt="arrow"
@@ -243,7 +251,7 @@ export default function SettingsNeedsOffers() {
             </div>
           </section>
         </div>
-      </div>
+      </div>}
 
       <SettingsPopup1 open={open} handleClickOpen={handle2ClickOpen} handleClose={handleClose} currentChoice={currentChoice} setCurrentChoice={setCurrentChoice} />
 
@@ -253,7 +261,7 @@ export default function SettingsNeedsOffers() {
         isLocation
         files={[pdfIcon]}
         isType
-        heading={type1 === "needs" ? "need" : "offer"}
+        heading={type === "needs" ? "need" : "offer"}
         open={open2}
         handleClose={handle2Close}
         currentChoice={currentChoice}
