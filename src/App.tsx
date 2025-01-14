@@ -16,6 +16,12 @@ import SettingsContacts from "./components/settings/Contacts/SettingsContacts";
 import SettingsOrganizations from "./components/settings/Organizations/SettingsOrganizations";
 import SettingsNotification from "./components/settings/Notification/SettingsNotification";
 import NotFound from "./NotFound";
+import SignUp from "./components/account/Sign-up";
+import LogIn from "./components/account/Log-in";
+import AuthLayout from "./components/account/AuthLatout";
+import ForgotPassword from "./components/account/Forgot-password";
+import MailSent from "./components/account/Mail-sent";
+import UpdatePassword from "./components/account/Update-password";
 
 function App() {
   return (
@@ -78,6 +84,14 @@ function App() {
 
           <Route path="/needs/matches" element={<DiscoverMatches />} />
           <Route path="/offers/matches" element={<DiscoverMatches />} />
+
+          <Route path="/auth" element={<AuthLayout />}>
+          <Route path="/auth/sign-up" element={<SignUp />} />
+          <Route path="/auth/log-in" element={<LogIn />} />
+          <Route path="/auth/forgot-password" element={<ForgotPassword />} />
+          <Route path="/auth/mail-sent" element={<MailSent />} />
+          <Route path="/auth/update-password" element={<UpdatePassword />} />
+          </Route>
 
           <Route path="/settings" element={<SettingsLayout />}>
           <Route path="/settings/profile" element={<SettingsProfile />} />

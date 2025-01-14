@@ -8,11 +8,11 @@ import PopoverDiscover from './components/popovers/PopoverDiscover';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { ReactComponent as HorizontalSvg } from '../public/horizontal-svg.svg';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 export default function MainLayout() {
-
+  const location = useLocation();
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' })
   const isLaptop = useMediaQuery({ query: '(max-width: 1279px)' })
 
@@ -33,6 +33,8 @@ export default function MainLayout() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const isAuthPage = location.pathname.includes('/auth');
 
   return (
     <>
@@ -60,6 +62,7 @@ export default function MainLayout() {
       </main>
 
 
+      {!isAuthPage && (
       <footer className={styles.footer}>
         <section className={styles.footer__left}>
           <div style={{ maxHeight: '46px' }}>
@@ -95,6 +98,7 @@ export default function MainLayout() {
           <div className={styles.footer__android} />
         </section>
       </footer>
+      )}
     </>
   );
 }
